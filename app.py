@@ -347,11 +347,13 @@ def main():
         <div class="footer-wrapper">
             <div class="footer-title">Dự án Từ điển H're - Việt</div>
             <div class="footer-info">
-                Phát triển bởi <b>Đoàn Hồng Bảo</b><br>
-                Email: 24520005@gm.uit.edu.vn
+                Phát triển bởi <b>Huỳnh Thanh Khải</b><br>
+                Đồng tác giả <b>Đoàn Hồng Bảo</b> <br>
+                Email: huynhthanhkhaibato2011@gmail.com | 24520005@gm.uit.edu.vn
             </div>
         </div>
     """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
+
     main()
