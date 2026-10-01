@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import json
 from collections import Counter, defaultdict
 from collections.abc import Iterable
+from pathlib import Path
 from typing import Any
 
 import pandas as pd
@@ -81,6 +83,33 @@ class IBMModel1:
 
     def probability_sums(self) -> dict[str, float]:
         return {source: sum(targets.values()) for source, targets in self.probabilities.items()}
+
+    def save(self, path: str | Path) -> None:
+        if not self.probabilities:
+            raise RuntimeError("Cannot save an unfitted IBM Model 1")
+        destination = Path(path)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "format": "hre-ibm1-v1",
+            "iterations": self.iterations,
+            "null_token": self.null_token,
+            "probabilities": self.probabilities,
+        }
+        destination.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    @classmethod
+    def load(cls, path: str | Path) -> IBMModel1:
+        payload = json.loads(Path(path).read_text(encoding="utf-8"))
+        if payload.get("format") != "hre-ibm1-v1":
+            raise ValueError("Unsupported IBM Model 1 artifact")
+        model = cls(iterations=int(payload["iterations"]), null_token=str(payload["null_token"]))
+        model.probabilities = {
+            str(source): {str(target): float(value) for target, value in targets.items()}
+            for source, targets in payload["probabilities"].items()
+        }
+        if any(abs(total - 1) > 1e-6 for total in model.probability_sums().values()):
+            raise ValueError("IBM Model 1 probabilities are not normalized")
+        return model
 
     def _best_target(self, source_token: str) -> tuple[str, float] | None:
         candidates = self.probabilities.get(token_key(source_token))
