@@ -1,0 +1,17 @@
+data:
+  train: data/splits/train.parquet
+  test: data/splits/test.parquet
+  nllb_predictions: artifacts/evaluation/predictions/nllb_lora.csv
+  hybrid_predictions_dir: artifacts/evaluation/stage4_predictions
+  statistical_artifact: artifacts/models/statistical
+evaluation:
+  comparison: artifacts/evaluation/model_comparison.csv
+  outputs: artifacts/evaluation/model_outputs.csv
+  predictions_dir: artifacts/evaluation/predictions
+  sample_size: 24
+  sample_seed: 42
+statistical:
+  iterations: 10
+  lm_weight: 0.15
+  beam_size: 4
+  candidates_per_token: 3

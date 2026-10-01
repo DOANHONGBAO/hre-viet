@@ -50,6 +50,7 @@ def evaluate_model(
                 "source": row.hre,
                 "reference": reference,
                 "hypothesis": hypothesis,
+                "latency_ms": latencies_ms[-1],
                 "details": json.dumps(result, ensure_ascii=False),
             }
         )
@@ -61,6 +62,7 @@ def evaluate_model(
         "bleu": round(float(bleu), 6),
         "chrf_pp": round(float(chrf_pp), 6),
         "latency_ms_mean": round(float(np.mean(latencies_ms)), 6),
+        "latency_ms_median": round(float(np.median(latencies_ms)), 6),
         "latency_ms_p95": round(float(np.percentile(latencies_ms, 95)), 6),
         "oov_rate": (
             round(unknown_count / source_token_count, 6)
