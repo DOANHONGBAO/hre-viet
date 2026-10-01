@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hre-translate"
 version = "0.1.0"
-description = "Data foundation for low-resource H're-Vietnamese machine translation"
+description = "Low-resource H're-Vietnamese machine translation platform"
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
 dependencies = [
@@ -15,6 +15,7 @@ dependencies = [
   "pyarrow>=18,<25",
   "pydantic>=2.9,<3",
   "PyYAML>=6,<7",
+  "sacrebleu>=2.4,<3",
   "scikit-learn>=1.5,<2",
 ]
 
@@ -34,4 +35,3 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
-

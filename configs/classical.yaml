@@ -1,0 +1,25 @@
+data:
+  train: "data/splits/train.parquet"
+  test: "data/splits/test.parquet"
+
+dictionary:
+  training_types: ["lexicon", "phrase"]
+  preserve_unknown: true
+
+translation_memory:
+  training_types: ["sentence"]
+  analyzer: "char_wb"
+  ngram_range: [2, 5]
+  direct_match_threshold: 0.85
+  default_top_k: 5
+
+ibm1:
+  training_types: ["lexicon", "phrase", "sentence"]
+  iterations: 10
+  lowercase_lookup: true
+  null_token: "<NULL>"
+
+evaluation:
+  output: "artifacts/evaluation/classical_results.csv"
+  predictions_dir: "artifacts/evaluation/predictions"
+
