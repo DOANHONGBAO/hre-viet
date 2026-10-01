@@ -1,0 +1,26 @@
+{
+  "base_model": "facebook/nllb-200-distilled-600M",
+  "source_language_proxy": "vie_Latn",
+  "target_language": "vie_Latn",
+  "runtime": {
+    "device": "cuda",
+    "cuda_available": true,
+    "gpu_name": "Tesla T4",
+    "gpu_memory_gb": 14.56,
+    "fp16_enabled": true
+  },
+  "train_rows": 1275,
+  "validation_rows": 160,
+  "trainable_parameters": 1179648,
+  "total_parameters": 616253440,
+  "trainable_percent": 0.191423,
+  "training_metrics": {
+    "train_runtime": 2028.6572,
+    "train_samples_per_second": 6.285,
+    "train_steps_per_second": 0.197,
+    "total_flos": 387176987172864.0,
+    "train_loss": 3.798508605957031,
+    "epoch": 10.0
+  },
+  "adapter_path": "/kaggle/working/hre-translate/artifacts/models/nllb/final_adapter"
+}

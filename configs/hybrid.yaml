@@ -1,0 +1,14 @@
+data:
+  train: data/splits/train.parquet
+  test: data/splits/test.parquet
+  nllb_predictions: artifacts/evaluation/predictions/nllb_lora.csv
+lexicon_types: [lexicon, phrase]
+memory_types: [sentence]
+retrieval:
+  top_k: 5
+  ngram_range: [2, 5]
+  medium_threshold: 0.50
+  high_threshold: 0.85
+evaluation:
+  results: artifacts/evaluation/stage4_results.csv
+  predictions_dir: artifacts/evaluation/stage4_predictions

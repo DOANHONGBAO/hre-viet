@@ -1,0 +1,7 @@
+accelerate>=1,<2
+datasets>=3,<5
+peft>=0.13,<1
+mlflow>=3,<4
+sacrebleu>=2.4,<3
+sentencepiece>=0.2,<1
+transformers>=4.45,<5

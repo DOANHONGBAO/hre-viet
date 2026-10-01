@@ -1,0 +1,6 @@
+﻿model,test_examples,bleu,chrf_pp,replay_processing_ms_mean,replay_processing_ms_p95,tm_routes,medium_tm_fallbacks,dictionary_edits,latency_note
+translation_memory,160,4.55251,17.809439,33.463227,37.62126,160,0,0,Local live TM retrieval; no NLLB generation
+nllb_only,160,0.435135,5.879872,0.1227,0.15591,0,0,0,Local retrieval/replay only; not end-to-end NLLB latency
+nllb_dictionary,160,0.467314,6.888663,0.198392,0.32533,0,0,33,Local retrieval/replay only; not end-to-end NLLB latency
+nllb_tm,160,1.739116,9.176759,32.924747,34.48743,5,12,0,Local retrieval/replay only; not end-to-end NLLB latency
+full_hybrid,160,1.739116,9.176226,35.200752,53.337635,5,12,1,Local retrieval/replay only; not end-to-end NLLB latency

@@ -5,4 +5,10 @@ __pycache__/
 .ruff_cache/
 .venv/
 artifacts/*.log
-
+artifacts/models/nllb/
+artifacts/kaggle/*.zip
+mlruns/
+mlflow.db
+mlflow.db-*
+mlartifacts/
+artifacts/.pytest_tmp/

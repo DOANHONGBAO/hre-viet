@@ -1,0 +1,161 @@
+﻿dataset_type,source,reference,hypothesis,model,similarity,replay_processing_ms
+lexicon,'Nâng,Thật,Có thật không?,translation_memory,0.32957606,33.156300021801144
+lexicon,'Ngeo,Trái,Sau đó lấy nước rửa cho sạch.,translation_memory,0.27410071,32.026899978518486
+lexicon,Alac,Rượu,Anh có muốn mua rượu không?,translation_memory,0.63413968,32.353100017644465
+lexicon,Caq,Ăn,"Tôi ăn với cá. Tôi ăn cơm mắm thôi, không có gì khác.",translation_memory,0.4910691,31.671299948357046
+lexicon,Dhiq,hết,Xã tôi cũng có rồi,translation_memory,0.54721488,33.43429998494685
+lexicon,Zuaq,Dựa,Các đơn vị bộ đội xông giúp giân làm gì?,translation_memory,0.18460341,33.54380000382662
+lexicon,Hnoq,thấy,Tôi hân-hạnh gặp anh.,translation_memory,0.52160286,33.00080000190064
+lexicon,Hri,Rơm,Một trăm đồng một nải.,translation_memory,0.20397675,31.757200020365417
+lexicon,Hwit,quét,Huyên Trà Bông ở đâu?,translation_memory,0.2944792,31.689500028733164
+lexicon,Mơi,Mời,Mời họp chi bộ,translation_memory,0.45356551,33.49910001270473
+lexicon,Moiq,số1,Một mảnh bé nhỏ,translation_memory,0.57840532,32.69409999484196
+lexicon,Nơih,ngực,Bà có đau tức ngực không?,translation_memory,0.62466799,31.682300032116473
+lexicon,Razêu,Nứa,Tôi không có thì giờ.,translation_memory,0.20396649,41.849899978842586
+phrase,Atiq ca aih,sau đó,Sau đó lấy nước rửa cho sạch.,translation_memory,0.35249694,56.721200002357364
+phrase,A’mua,"dơ bẩn, mất vệ sinh",Miền núi tính Quảng Ngãi có hai mùa:mùa mưa và mùa nắng,translation_memory,0.42748846,32.095099973957986
+phrase,'Ne,"giữa, một nửa",Bí đao tôi chưa biết ăn.,translation_memory,0.17811991,31.416299985721707
+phrase,'Nhơq y dhoa,"Chưa hình thành, chưa có vẻ",Bí đao tôi chưa biết ăn.,translation_memory,0.19668843,31.765300023835152
+phrase,Ê,"đấy, thế",Ăn thêm đi.,translation_memory,0.1887214,32.02980000060052
+phrase,Atât mê,Ngừng mưa,Có trời nắng lạnh nắng mưa,translation_memory,0.21369313,31.515000038780272
+phrase,Atiq ca aih,Sau đó,Sau đó lấy nước rửa cho sạch.,translation_memory,0.35249694,31.539199990220368
+phrase,Ca vô aih,Ai đó,Sau đó lấy nước rửa cho sạch.,translation_memory,0.32479086,31.385999987833202
+phrase,Va,Chúng mình (2 người),"Phải, hai người đó có một ông bà nội; họ là anh em.",translation_memory,0.36652608,31.412200012709945
+phrase,Bây,"Các, những, bầy, lũ, bọn, đàn, (các vị...)",Văn hóa các dân tộc có giống nhau không?,translation_memory,0.36445215,32.230100012384355
+phrase,Bê,"Mặt, bề, bên, phía, hướng",tất cả các lĩnh vực,translation_memory,0.34132418,32.644899969454855
+phrase,Bênh,bệnh (như tiếng việt),tất cả các lĩnh vực,translation_memory,0.15520925,32.82169997692108
+phrase,Tê,To lớn,Xã bạn có trạm y tế chưa?,translation_memory,0.19207897,31.933699967339635
+phrase,Căn pa'rong,Giàu có,"Chúc anh làm kinh tế giỏi, đời sống giàu sang",translation_memory,0.48583432,32.05280000111088
+phrase,Caq dheng,Ăn tết,"Tôi ăn với cá. Tôi ăn cơm mắm thôi, không có gì khác.",translation_memory,0.2453278,31.92719997605309
+phrase,Caq mêch,"ăn no, ngán","Tôi ăn với cá. Tôi ăn cơm mắm thôi, không có gì khác.",translation_memory,0.2969303,33.81910000462085
+phrase,Chê tu,"che phủ, tủ",Một mảnh bé nhỏ,translation_memory,0.15873441,32.479099987540394
+phrase,Cleac clêm,"(ruột, gan) ruột,thịt",Uống thuốc khỏi đau ruột.,translation_memory,0.37178481,31.443299958482385
+phrase,Hnây,"dạy, hướng dẫn",Ở bên duới,translation_memory,0.17527832,32.66179998172447
+phrase,Ca dhê,"cây trảy, trúc",tất cả các lĩnh vực,translation_memory,0.25722333,32.100999960675836
+phrase,Dhêh xrôh,"mạnh, xiết (chảy mạnh, xiết), đổ xuống","Anh! Tôi hỏi anh cho rõ, sáng nay anh nói gì?",translation_memory,0.20884304,33.06829999201
+phrase,Dhênh pêt loang,Tết trồng cây,Nhân dân ta trồng cây có được cái gì không?,translation_memory,0.47672748,32.74819999933243
+phrase,Vu wia,tạm được,Bới thế nào cũng được,translation_memory,0.45704974,32.05769998021424
+phrase,'Mrim dho,mỉm cười,Xã tôi cũng có rồi,translation_memory,0.21373258,32.38749998854473
+phrase,Enh,"Muốn, thích,ưng","có,chúng tôi thường ăn đuôi với chân.",translation_memory,0.20792752,31.538300041574985
+phrase,Eng ka lah,"từ ngày xưa, xa xưa",Sống đến răng ra khỏi miệng,translation_memory,0.33878681,31.78650001063943
+phrase,Con kalô,con trai,"Có, tôi có ba đứa rồi.",translation_memory,0.39764035,31.686000002082437
+phrase,Hagô,"không may mắn, xui xẻo","có,chúng tôi thường ăn đuôi với chân.",translation_memory,0.18333912,31.52409999165684
+phrase,Hnăn,"đuổi, rượt đuổi","Muốn được gia đình văn hóa,tôi đã đăng kí và làm đẹp trong qui chế công nhân gia đình văn hóa nhà nước đưa ra",translation_memory,0.14400393,32.44869998889044
+phrase,Hnây,"dạy dỗ, chỉ dẫn, dạy",Ở bên duới,translation_memory,0.17527832,32.450899947434664
+phrase,Hnim mayq,nhà máy,Nhà anh bao xa?,translation_memory,0.42567172,31.38050000416115
+phrase,Ha chêh,hắt hơi,Một mảnh bé nhỏ,translation_memory,0.41512956,32.19649998936802
+phrase,Ha ngêp,mát mẻ,Tại sao?,translation_memory,0.22836678,31.68249997543171
+phrase,Ha tôq pa nâc,ấm no,Có trời nắng lạnh nắng mưa,translation_memory,0.36616612,32.51849999651313
+phrase,Ha tuông,"trò chuyện, tâm sự",To lớn vô cùng,translation_memory,0.43346506,66.25350000103936
+phrase,H’lâu,"Không dễ, không thuận lợi",Tôi đi dự đám ma mà anh,translation_memory,0.18221256,36.02179995505139
+phrase,Plôh,"mọc mầm, nhô ra",Đo dài ngắn,translation_memory,0.21378103,49.951599969062954
+phrase,Kapoich,nói chuyện,Mời dự cúng đám trâu,translation_memory,0.2090637,72.3415999673307
+phrase,Hi manâyq,"ngày nay, hiện nay",Đường giao thông nông thôn bây giờ như thế nào?,translation_memory,0.28810872,43.753900041338056
+phrase,Uh hrooc,đau ốm,Đau thế nào?,translation_memory,0.28182939,34.61749997222796
+phrase,Ia canh,gà mái,Tiếng gáy gà trống,translation_memory,0.25491231,34.81430001556873
+phrase,Jah may mo,được may mắn,3 ang thôi,translation_memory,0.37238989,34.26350001245737
+phrase,Ro,gùi dẹp,"Sống đến mọc tóc bạc, trắng tóc đen",translation_memory,0.21618821,32.890900038182735
+phrase,I loq,"cũng biết, vẫn biết",Biết gì.,translation_memory,0.54189274,33.63090002676472
+phrase,Jreo hla,thuốc lá,Đừng hút thuốc lá,translation_memory,0.64072786,33.96150004118681
+phrase,Ju ja,dư giả,Bạn làm gì để giữ rừng?,translation_memory,0.2691628,37.39870002027601
+phrase,Ka đoa,phòng hờ,thầy ơi có biết em không?,translation_memory,0.23137828,34.26039998885244
+phrase,Ka jeo,gió,thầy ơi có biết em không?,translation_memory,0.27585498,31.79049998288974
+phrase,Ka lung,Cái trống lớn,thầy ơi có biết em không?,translation_memory,0.23247669,34.85029999865219
+phrase,Kanơm,"Dựa, nhờ",thầy ơi có biết em không?,translation_memory,0.33257098,32.83089998876676
+phrase,Tap,đẻ trứng,Bài thứ bảy,translation_memory,0.31378718,31.64729999843985
+phrase,Khê hlâp,Trăng lặng,Tháng 1 là mùa gì?,translation_memory,0.28796064,31.75389999523759
+phrase,Khê katoa,Trăng rằm,Tháng 1 là mùa gì?,translation_memory,0.36578479,31.71199996722862
+phrase,Khoi,"Đã, rồi",Anh còn học hay đã (đi) làm (việc)?,translation_memory,0.40591208,32.31809998396784
+phrase,Cong,vòng tay,"Có, tôi có ba đứa rồi.",translation_memory,0.34841317,32.01730002183467
+phrase,Krac,huỳnh đàn,Nhỏ li ti,translation_memory,0.1854227,31.635900028049946
+phrase,Krong,"lưng, sau lưng",Mẹ làm gì đó?,translation_memory,0.29069848,32.359000004362315
+phrase,Liq lân,"bừa bãi, bậy bạ","Làm (chuyện) sai, bậy bạ",translation_memory,0.63063213,31.809600011911243
+phrase,Loang k’rêng,cây dền,Ở trên trời,translation_memory,0.41751195,31.676999991759658
+phrase,ji loq,"cũng biết, vẫn biết",Biết gì.,translation_memory,0.38554383,51.78840004373342
+phrase,'Mu,bóng người,Tiếng gáy gà trống,translation_memory,0.25043676,35.10079998522997
+phrase,Gah,phát dọn,Một trăm đồng một nải.,translation_memory,0.25481452,31.892600003629923
+phrase,Moiq jât,10,Một mảnh bé nhỏ,translation_memory,0.42924633,31.710100010968745
+phrase,Moiq ngan,một ngàn,Một mảnh bé nhỏ,translation_memory,0.40367921,32.051100046373904
+phrase,Mua padăng,"Mùa nắng, hạn hán",Miền núi tính Quảng Ngãi có hai mùa:mùa mưa và mùa nắng,translation_memory,0.58000333,31.47809999063611
+phrase,Ngao ngaiq,toàn bộ,"Tôi có bốn anh em, nhưng một người chết rồi.",translation_memory,0.39401609,31.908800010569394
+phrase,Goi dheac,đầu nguồn,"Bài ""đêm khuya tiếng suối reo""",translation_memory,0.36404288,31.42620000289753
+phrase,Oi caq,Ăn ở,"Tôi ăn với cá. Tôi ăn cơm mắm thôi, không có gì khác.",translation_memory,0.40960133,31.462999992072582
+phrase,pa dring,Cầu vồng,Kinh tế giàu nghèo thế nào?,translation_memory,0.17528809,31.958699983078986
+phrase,Pa dro,Buôn bán,chừng nào đó ở chơi bạn chia cho tôi được không?,translation_memory,0.21573031,32.204999995883554
+phrase,Pa gheo,"Làm hoàn thành, hoàn tất, cuối cùng",chừng nào đó ở chơi bạn chia cho tôi được không?,translation_memory,0.44543174,31.986799964215606
+phrase,Pa nâc,no,Đang đi đâu đây thầy cúng,translation_memory,0.19771318,31.563199998345226
+phrase,Pa neang,cau,Anh Neng ở đâu?,translation_memory,0.70925481,31.377900042571127
+phrase,Pa rêu,Đánh thức,Tôi cho nó thuốc sốt rét và thuốc khỏe.,translation_memory,0.25745553,33.14309997949749
+phrase,Patiah,ví dụ,Văn hóa các dân tộc có giống nhau không?,translation_memory,0.24801588,32.224199967458844
+phrase,Pad hiq pa dhâng,tất cả,Bài thứ năm mươi lăm,translation_memory,0.24063753,31.39090002514422
+phrase,panec,"phong tục, phương pháp, cách thức",Tôi đói lắm.,translation_memory,0.21802879,31.41590004088357
+phrase,Papêp,"nghèo khổ, túng thiếu","Tôi đi không nổi, mệt quá.",translation_memory,0.15059937,31.79680003086105
+phrase,patơ lem,điềm lành,Mừng em có vợ đẹp,translation_memory,0.32422532,31.216500035952777
+phrase,patơ 'mêq,điềm xấu,Người già sẽ thổi sáo.,translation_memory,0.17294307,31.5301000373438
+phrase,Pleng phi,Hạt gạo,Anh có muốn mua gạo không?,translation_memory,0.41756083,52.09060001652688
+phrase,Plinh taneh,đất trời (trời đất),To bằng đất,translation_memory,0.6259636,31.60540002863854
+phrase,Quai gon,Củ mỳ,Từ Quảng Ngãi đến Ba Tơ bao nhiêu cây số?,translation_memory,0.2236937,31.741200014948845
+phrase,Ra nhoa,"điên, khùng",Làm thế nào được gia đình văn hóa,translation_memory,0.14772629,31.611200014594942
+phrase,Ra viaq,"khéo léo, tỉ mĩ",tôi biết có chút à.,translation_memory,0.18060771,31.976700003724545
+phrase,Ra zôt,thường xuyên,"đi học phải làm vui tâm trạng thầy,cô giáo từ việc học ra tốt và hạnh kiểm đẹp",translation_memory,0.27701392,32.07239997573197
+phrase,Ranuh,giãy giụa,"Được,anh xách cho tôi ná và tên.",translation_memory,0.21556058,31.631599995307624
+sentence,`Boi baiq jàt mòiq,Bài thứ hai mươi mốt,Bài thứ mười hai,translation_memory,1.0,34.01509998366237
+sentence,`Boi baiq jàt piq,Bài thứ hai mươi ba,Bài thứ ba mươi hai,translation_memory,1.0,34.14339997107163
+sentence,`Boi mòiq jàt mòiq,Bài thứ mười một,Bài thứ mười ba,translation_memory,0.84069976,32.61900000507012
+sentence,`Boi padam,Bài thứ nam,Bài thứ năm mươi lăm,translation_memory,0.92169307,33.22199999820441
+sentence,`Boi piq jàt cachìn,Bài thứ ba mươi chín,Bài thứ mượi chín,translation_memory,0.83006402,32.078699965495616
+sentence,ao lam bôq đôiq,em đi bộ đội.,Mời họp chi bộ,translation_memory,0.29247088,33.46110001439229
+sentence,Au doih hãq tèm cađac.,Tôi lấy ở đó ra và quàng đi rồi.,"Bẫy chuột đã bắt chuột,tôi lấy con chuột ra và nó đã chết.",translation_memory,0.27120462,34.522100002504885
+sentence,Au i pôn đam ruoang,Tôi có 4 đám ruộng,Anh có mấy đám ruộng?,translation_memory,0.66800137,32.868699985556304
+sentence,Au jiq cleac.,Tôi đau bụng quá.,Uống thuốc khỏi đau ruột.,translation_memory,0.66702359,32.16130001237616
+sentence,Au lam rot dahèq.,Tôi đi mua đồ.,tôi mua của nó đó.,translation_memory,0.37056261,32.78670000145212
+sentence,Au 'nhòq song padon dahvèq.,Tôi chưa sửa xoạn đồ xong.,Bí đao tôi chưa biết ăn.,translation_memory,0.37644595,31.954500009305775
+sentence,Au ùh `nì broq cleq.,Ổng không thể dậy đi đâu hết.,Bà làm gì đó?,translation_memory,0.42799247,32.465500000398606
+sentence,Au yùg kiac loq cap cachit.,Tôi sợ gặp cọp nó sẽ vồ và giết tôi.,Cha mẹ tôi đã chết rồi,translation_memory,0.50898742,32.77330001583323
+sentence,Bà Hrê sa dìq jaq.,Tiếng Hrê khó lắm.,Ba tôi đi đau đầu quá.,translation_memory,0.42178397,32.849500013981014
+sentence,"Ba za! Pai poa, eoq pa ngot.","Bà zà! Nấu cơm, anh đói.","Thôi tôi nghỉ, tôi về nấu cơm.",translation_memory,0.26721383,31.85279999161139
+sentence,beq _bèn renh Aiaq teo haq.,Mình mau theo lối nó,Chúng ta mau mau về.,translation_memory,0.52203657,31.45589999621734
+sentence,Bô `nỉ.,Tôi không biết.,Ai bán bắp cho tôi mua?,translation_memory,0.15272863,31.6292000352405
+sentence,Caiq toq pling,To bằng trời,Rẫy to bằng trời bằng đất,translation_memory,0.70470706,32.10969996871427
+sentence,Canaq dỉg jaq. Au ùh rọt.,"Đắt quá, tôi không mua.",Tôi không nhận ra anh.,translation_memory,0.41584294,31.770400004461408
+sentence,Chucq mung oh i viêcq vroq ta nha nuocq,Chúc mừng em đã có việc làm trong (cơ quan) Nhà nước,Chúc mừng anh/chị đã học xong đại học,translation_memory,0.4121888,31.413199962116778
+sentence,"Con iêng, oh ineq klêq?","Em gái, em tên gì?",Tên gì?,translation_memory,0.50448808,32.58619998814538
+sentence,"Dỉq ca plài bùi caq jam capò,bo,chùa.","Cả làng vui ăn trâu,ăn bò,ăn heo.",Cám ơn nhiều lắm.,translation_memory,0.38519957,31.669000047259033
+sentence,Gê oi đheacq lêq,Anh ở nước nào,Anh đi đâu?,translation_memory,0.37033365,31.95839998079464
+sentence,Gè toq lêq hanăm?,Em bao nhiêu tuổi(năm)?,"Thưa cụ bà, bà được mấy chục năm tuổi rồi",translation_memory,0.56799712,32.74009999586269
+sentence,Gê vroq ruông toq lêq hi?,Anh làm ruộng bao nhiêu ngày?,Ruộng có cao không,translation_memory,0.42088815,34.66110001318157
+sentence,Ghêêh lam kleq ra mang kô?,Bạn đi đâu ban đêm đây?,"Anh! Tôi hỏi anh cho rõ, sáng nay anh nói gì?",translation_memory,0.38038204,32.57650003070012
+sentence,Ghêêh vroq tô trương tô an ninh jiaq?,Bạn làm tổ làm tổ trưởng tổ an ninh à?,Anh làm tổ trưởng tổ an ninh hả?,translation_memory,1.0,31.71250002924353
+sentence,Gông ao oi ta tinh Quảng Ngaih.,Quê tôi ở tỉnh Quảng Ngãi.,Quê ở đâu?(ở xứ nào),translation_memory,0.41429993,31.763100007083267
+sentence,Hì hnèh au trùh.,Tôi đến hôm qua.,Hôm qua các anh làm gì?,translation_memory,0.47789817,31.704099965281785
+sentence,Hnem oi plây klêq?,Nhà ở làng/bản/nóc nào?,Tên gì?,translation_memory,0.40180596,31.443599960766733
+sentence,Hnem oi talêq?,Nhà ở đâu,Cúng ở đâu?,translation_memory,0.41577634,32.12960000382736
+sentence,Hnim au jêq cô.,Nhà tôi ở gần đây.,Tôi ít khi đến đây.,translation_memory,0.37608795,31.48130001500249
+sentence,Hnoq hãi.,Có chứ.,Tôi thấy nó ốm.,translation_memory,0.40836124,32.061400008387864
+sentence,Ìh brog vìac hìaq loq lếp ủh?,Anh làm việc có mệt không?,Nó đi Quảng-Ngãi làm việc.,translation_memory,0.45595584,31.34489996591583
+sentence,Ih oi aiq uh?,Ông có khoé không?,Anh có rẫy không?,translation_memory,0.39825076,31.821599986869842
+sentence,Ìh oi ĩnh plài vì Anang jah ha`meang hnoq Batò ùh?,Từ vì Anang anh có đến Batơ không?,Tôi ở làng Vi Anang gần Batơ,translation_memory,0.71329474,32.46049996232614
+sentence,Ih oi thôn klêq/ xah klêq/ hwên klêq/ tỉnh klêq,Anh/ chị/ ông/ bà ở thôn/ xã/huyện/ tỉnh nào?,Anh/ chị làm việc gì/ nghề gì?,translation_memory,0.52172619,33.62629999173805
+sentence,Joi tacro.clàn 1on hlôi apôm.,"Con nai ngã,nó nuốt nguyên con.",Con trăn quấn sát con nai.,translation_memory,0.32807713,32.02649997547269
+sentence,Khê jâtq la mua klêq?,Tháng 10 là mùa gì?,Tháng 1 là mùa gì?,translation_memory,0.71476637,32.79500000644475
+sentence,Khôi haten sèq.,Gần tới rồi.,Cách đây 3 cây số,translation_memory,0.47192156,31.677499995566905
+sentence,Lam ta hwên Ba Tơ,Đi đến huyện Ba Tơ,Đi xã Ba Vì,translation_memory,0.32384421,31.68569999979809
+sentence,Lam troang wecq,Đi đường quẹo,Đi đường nào,translation_memory,0.76024668,31.897000037133694
+sentence,Ma lam mùih jèch.,Hai chúng tôi đi làm rẫy.,Hôm qua chúng tôi làm rẫy.,translation_memory,0.51230367,31.84550005244091
+sentence,Mơi lam ngan văn nghêq,Mời đi xem văn nghệ,Tôi đi xem ruộng,translation_memory,0.4028831,33.748899993952364
+sentence,Mơi voac lam hâu tadreo vitq capơ,Mời ông đi dự cúng đâm trâu,Mời dự cúng đám trâu,translation_memory,0.67433326,32.07989997463301
+sentence,"Mòiq pớm calô, baiq toq cadrỉ.",Một con trai và hai con gái.,Bài thứ mười hai,translation_memory,0.48629847,32.26489998633042
+sentence,nhìn ĩnh veang broq da chôp.,Chúng tôi cũng muốn giúp hai ông.,Các anh muốn giúp đở tôi không?,translation_memory,0.65951751,32.89149998454377
+sentence,"Òq, ùh caq cleq oq.",Đi mạnh giỏi nhé.,"Came ơn, vâng, mời anh đến.",translation_memory,0.57663322,32.56750002037734
+sentence,Phapq luât aih kah klêq?,Pháp luật là cái gì?,Tên gì?,translation_memory,0.42715322,32.406500016804785
+sentence,"Po ('big dau)yôh, ca'nhah ngit.","Bí đao dài,vỏ màu xanh.","Ngày mai nhà dài xong,họ sẽ làm thịt trâu ăn.",translation_memory,0.17185612,31.752999988384545
+sentence,Ta tau au hnoq joi caiq.,tôi thấy con nai lớn đằng kia.,Ở đằng kia,translation_memory,0.48713173,34.01360003044829
+sentence,Toq xítq,Nhỏ xí xi,Anh có mấy anh em?,translation_memory,0.61919328,34.45470001315698
+sentence,"Ùh,au cadàu yêu renh ca gèh.","Không có,tao chạy mau hơn mày.",Tao chạy nhanh hơn mày.,translation_memory,0.89279982,31.103100045584142
+sentence,Việc khởi nghĩa Ba Tơ zo ka vô lanh đaoq.,Việc khởi nghĩa Ba Tơ do ai lạnh đạo,Việc khởi nghĩa Ba Tơ do Tỉnh uy Quãng Ngãi lạnh đạo.,translation_memory,0.72716393,31.62919997703284
+sentence,Voac caq jam chua hadhai jah,Ông ăn thịt heo có được không.,Em tôi chung ông bà,translation_memory,0.3200395,32.278799975756556
+sentence,Voac Hồ thanh lâp Đảng hi vaiq khê piq h`năm 1930 oi ta Hồng Kông.,Bác Hồ thành lập Đảng ngày 2 tháng 3 năm 1930 ở Hồng Kông.,"Bác Hồ thành lập Đảng ngày nào, tháng nào, ở đâu?",translation_memory,0.52746505,33.55479997117072
+sentence,Vroq 'mâng lêq,làm thế nào,Phải ngăn việc chấp hành luật lệ giao thông thế nào?,translation_memory,0.37076925,31.364599999506027
+sentence,Vroq taneh loh vâcq hơi đheac,Làm đất bốc nhiều hơi nước,To bằng đất,translation_memory,0.43682666,32.086199964396656
+sentence,xa ao khôi y.,Xã tôi có rồi.,Xã tôi có rồi. Còn xã bạn có chưa?,translation_memory,0.75709348,31.005900003947318
+sentence,"zoq, ao khanh kô","đúng, em khanh nè.",em đúng khanh không?,translation_memory,0.57173177,31.346899981144816
