@@ -2,4 +2,9 @@ hybrid_config: configs/hybrid.yaml
 nllb_config: configs/nllb.yaml
 adapter: artifacts/models/nllb/final_adapter
 base_model: artifacts/models/nllb/base_model
+statistical_artifact: artifacts/models/statistical
+default_model: statistical
 feedback_db: artifacts/feedback/feedback.sqlite3
+frontend_origins:
+  - http://127.0.0.1:5173
+  - http://localhost:5173

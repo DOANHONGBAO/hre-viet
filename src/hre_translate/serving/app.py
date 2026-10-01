@@ -6,6 +6,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 
 from hre_translate.serving.engine import ModelUnavailableError, ServingEngine
 from hre_translate.serving.feedback import FeedbackStore
@@ -39,6 +40,13 @@ def create_app(
         yield
 
     app = FastAPI(title="HRE-TRANSLATE", version="0.1.0", lifespan=lifespan)
+    config, _ = load_config(resolve(root, "configs/serving.yaml"))
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=list(config.get("frontend_origins", [])),
+        allow_methods=["GET", "POST"],
+        allow_headers=["Content-Type"],
+    )
 
     @app.get("/health")
     def health() -> dict[str, object]:

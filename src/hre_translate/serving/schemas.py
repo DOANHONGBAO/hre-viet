@@ -4,7 +4,10 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field, field_validator
 
-ModelChoice = Literal["auto", "hybrid", "dictionary", "translation_memory", "nllb"]
+ModelChoice = Literal[
+    "auto", "default", "rule_based", "dictionary", "ibm1", "statistical",
+    "translation_memory", "nllb", "hybrid",
+]
 
 
 class TranslateRequest(BaseModel):
