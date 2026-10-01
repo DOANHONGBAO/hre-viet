@@ -1,0 +1,1031 @@
+{
+  "files": [
+    {
+      "filename": "TU VUNG TIENG HRE-VIET CHUAN HOA 4.2024 (CO LAN THAM KHAO).xlsx",
+      "type": "Excel workbook",
+      "size_bytes": 195927
+    },
+    {
+      "filename": "TU_VUNG.zip",
+      "type": "ZIP audio archive",
+      "size_bytes": 23684965
+    }
+  ],
+  "workbook": {
+    "filename": "TU VUNG TIENG HRE-VIET CHUAN HOA 4.2024 (CO LAN THAM KHAO).xlsx",
+    "sheet_names": [
+      "TỪ VỰNG",
+      "CÂU"
+    ],
+    "sheets": {
+      "TỪ VỰNG": {
+        "columns": [
+          "STT",
+          "TỪ TIẾNG HRÊ",
+          "TỪ TIẾNG VIỆT",
+          "GHI CHÚ"
+        ],
+        "row_count": 1000,
+        "null_counts": {
+          "STT": 0,
+          "TỪ TIẾNG HRÊ": 0,
+          "TỪ TIẾNG VIỆT": 0,
+          "GHI CHÚ": 907
+        },
+        "usable_pair_count": 1000,
+        "empty_or_incomplete_pair_count": 0,
+        "exact_duplicate_pair_count": 4,
+        "source_length_characters": {
+          "min": 1,
+          "mean": 6.71,
+          "median": 6.0,
+          "p95": 13.0,
+          "max": 33
+        },
+        "target_length_characters": {
+          "min": 1,
+          "mean": 11.79,
+          "median": 9.0,
+          "p95": 28.0,
+          "max": 104
+        },
+        "source_vocabulary_size": 976,
+        "target_vocabulary_size": 1528,
+        "top_source_characters": [
+          {
+            "character": " ",
+            "count": 700
+          },
+          {
+            "character": "a",
+            "count": 650
+          },
+          {
+            "character": "h",
+            "count": 550
+          },
+          {
+            "character": "n",
+            "count": 477
+          },
+          {
+            "character": "i",
+            "count": 367
+          },
+          {
+            "character": "o",
+            "count": 334
+          },
+          {
+            "character": "g",
+            "count": 296
+          },
+          {
+            "character": "q",
+            "count": 222
+          },
+          {
+            "character": "u",
+            "count": 182
+          },
+          {
+            "character": "ê",
+            "count": 176
+          },
+          {
+            "character": "m",
+            "count": 172
+          },
+          {
+            "character": "c",
+            "count": 169
+          },
+          {
+            "character": "t",
+            "count": 150
+          },
+          {
+            "character": "r",
+            "count": 149
+          },
+          {
+            "character": "â",
+            "count": 147
+          },
+          {
+            "character": "l",
+            "count": 134
+          },
+          {
+            "character": "e",
+            "count": 128
+          },
+          {
+            "character": "P",
+            "count": 111
+          },
+          {
+            "character": "H",
+            "count": 109
+          },
+          {
+            "character": "K",
+            "count": 93
+          },
+          {
+            "character": "ô",
+            "count": 91
+          },
+          {
+            "character": "M",
+            "count": 90
+          },
+          {
+            "character": "C",
+            "count": 90
+          },
+          {
+            "character": "'",
+            "count": 82
+          },
+          {
+            "character": "d",
+            "count": 79
+          },
+          {
+            "character": "p",
+            "count": 76
+          },
+          {
+            "character": "D",
+            "count": 69
+          },
+          {
+            "character": "y",
+            "count": 59
+          },
+          {
+            "character": "ơ",
+            "count": 57
+          },
+          {
+            "character": "ă",
+            "count": 55
+          },
+          {
+            "character": "R",
+            "count": 54
+          },
+          {
+            "character": "’",
+            "count": 53
+          },
+          {
+            "character": "k",
+            "count": 51
+          },
+          {
+            "character": "N",
+            "count": 51
+          },
+          {
+            "character": "L",
+            "count": 44
+          },
+          {
+            "character": "J",
+            "count": 39
+          },
+          {
+            "character": "A",
+            "count": 36
+          },
+          {
+            "character": "G",
+            "count": 36
+          },
+          {
+            "character": "v",
+            "count": 29
+          },
+          {
+            "character": "j",
+            "count": 28
+          }
+        ],
+        "top_target_characters": [
+          {
+            "character": " ",
+            "count": 1842
+          },
+          {
+            "character": "n",
+            "count": 1074
+          },
+          {
+            "character": "h",
+            "count": 722
+          },
+          {
+            "character": "c",
+            "count": 549
+          },
+          {
+            "character": "t",
+            "count": 546
+          },
+          {
+            "character": "g",
+            "count": 542
+          },
+          {
+            "character": "i",
+            "count": 520
+          },
+          {
+            "character": ",",
+            "count": 426
+          },
+          {
+            "character": "a",
+            "count": 323
+          },
+          {
+            "character": "m",
+            "count": 295
+          },
+          {
+            "character": "u",
+            "count": 285
+          },
+          {
+            "character": "đ",
+            "count": 214
+          },
+          {
+            "character": "r",
+            "count": 198
+          },
+          {
+            "character": "l",
+            "count": 191
+          },
+          {
+            "character": "ư",
+            "count": 187
+          },
+          {
+            "character": "á",
+            "count": 172
+          },
+          {
+            "character": "o",
+            "count": 168
+          },
+          {
+            "character": "y",
+            "count": 154
+          },
+          {
+            "character": "à",
+            "count": 145
+          },
+          {
+            "character": "v",
+            "count": 115
+          },
+          {
+            "character": "b",
+            "count": 113
+          },
+          {
+            "character": "(",
+            "count": 98
+          },
+          {
+            "character": ")",
+            "count": 98
+          },
+          {
+            "character": "k",
+            "count": 97
+          },
+          {
+            "character": "d",
+            "count": 97
+          },
+          {
+            "character": "s",
+            "count": 93
+          },
+          {
+            "character": "ế",
+            "count": 93
+          },
+          {
+            "character": "p",
+            "count": 92
+          },
+          {
+            "character": "ê",
+            "count": 88
+          },
+          {
+            "character": "ớ",
+            "count": 88
+          },
+          {
+            "character": "ó",
+            "count": 83
+          },
+          {
+            "character": "â",
+            "count": 74
+          },
+          {
+            "character": "ố",
+            "count": 71
+          },
+          {
+            "character": "ờ",
+            "count": 71
+          },
+          {
+            "character": "ạ",
+            "count": 66
+          },
+          {
+            "character": "x",
+            "count": 65
+          },
+          {
+            "character": "ấ",
+            "count": 63
+          },
+          {
+            "character": "ô",
+            "count": 63
+          },
+          {
+            "character": "ắ",
+            "count": 61
+          },
+          {
+            "character": "ú",
+            "count": 58
+          }
+        ],
+        "suspicious_source_characters": [],
+        "suspicious_target_characters": [],
+        "word_pair_count": 196,
+        "phrase_pair_count": 804,
+        "possible_near_duplicates": {
+          "threshold": 0.88,
+          "pair_count": 20,
+          "examples": [
+            {
+              "left": {
+                "hre": "Atiq ca aih",
+                "vi": "sau đó"
+              },
+              "right": {
+                "hre": "Atiq ca aih",
+                "vi": "Sau đó"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "'Mêq",
+                "vi": "Xấu"
+              },
+              "right": {
+                "hre": "'Mêq",
+                "vi": "xấu"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "'Mêq’muông",
+                "vi": "Xấu, trắc trở"
+              },
+              "right": {
+                "hre": "Mêq’muông",
+                "vi": "Xấu, trắc trở"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Mu",
+                "vi": "chiếc khăn"
+              },
+              "right": {
+                "hre": "Mu",
+                "vi": "chiếc khăn"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Mơt",
+                "vi": "vào"
+              },
+              "right": {
+                "hre": "Mơt",
+                "vi": "Vào"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "'Đang cui",
+                "vi": "Đang ngủ"
+              },
+              "right": {
+                "hre": "'Đang cui",
+                "vi": "đang ngủ"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "'Nhơq",
+                "vi": "Chưa"
+              },
+              "right": {
+                "hre": "'Nhơq",
+                "vi": "chưa"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "'Nhroh",
+                "vi": "Xúc (cá)"
+              },
+              "right": {
+                "hre": "'Nhroh",
+                "vi": "Xúc cá"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Loq",
+                "vi": "biết"
+              },
+              "right": {
+                "hre": "Loq",
+                "vi": "Biết"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Chin",
+                "vi": "chín(nấu chín)"
+              },
+              "right": {
+                "hre": "Chin",
+                "vi": "chín (nấu chín)"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Hnim",
+                "vi": "nhà"
+              },
+              "right": {
+                "hre": "Hnim",
+                "vi": "nhà"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Dhêh",
+                "vi": "Mạnh"
+              },
+              "right": {
+                "hre": "Dhêh",
+                "vi": "mạnh"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Haten",
+                "vi": "Gần"
+              },
+              "right": {
+                "hre": "Ha ten",
+                "vi": "gần"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Phi",
+                "vi": "Gạo"
+              },
+              "right": {
+                "hre": "Phi",
+                "vi": "gạo"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Lơiq",
+                "vi": "để"
+              },
+              "right": {
+                "hre": "Lơiq",
+                "vi": "để"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Hmoi",
+                "vi": "khóc"
+              },
+              "right": {
+                "hre": "H’moi",
+                "vi": "khóc"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "hangai",
+                "vi": "xa"
+              },
+              "right": {
+                "hre": "Ha ngai",
+                "vi": "xa"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Ha ''nhêq",
+                "vi": "Cao"
+              },
+              "right": {
+                "hre": "Ha’nhêq",
+                "vi": "cao"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Vasêm",
+                "vi": "đầu tiên, bắt đầu"
+              },
+              "right": {
+                "hre": "Vasêm",
+                "vi": "đầu tiên, bắt đầu"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "I loq",
+                "vi": "cũng biết, vẫn biết"
+              },
+              "right": {
+                "hre": "ji loq",
+                "vi": "cũng biết, vẫn biết"
+              },
+              "similarity": 0.8969
+            }
+          ]
+        },
+        "excel_max_row": 2000,
+        "excel_max_column": 24
+      },
+      "CÂU": {
+        "columns": [
+          "Unnamed: 0",
+          "STT",
+          "CÂU TIẾNG HRÊ",
+          "CÂU TIẾNG VIỆT",
+          "GHI CHÚ"
+        ],
+        "row_count": 602,
+        "null_counts": {
+          "Unnamed: 0": 600,
+          "STT": 0,
+          "CÂU TIẾNG HRÊ": 0,
+          "CÂU TIẾNG VIỆT": 0,
+          "GHI CHÚ": 538
+        },
+        "usable_pair_count": 601,
+        "empty_or_incomplete_pair_count": 1,
+        "exact_duplicate_pair_count": 2,
+        "source_length_characters": {
+          "min": 3,
+          "mean": 25.75,
+          "median": 23.0,
+          "p95": 50.94999999999993,
+          "max": 116
+        },
+        "target_length_characters": {
+          "min": 3,
+          "mean": 25.43,
+          "median": 22.0,
+          "p95": 51.0,
+          "max": 109
+        },
+        "source_vocabulary_size": 1383,
+        "target_vocabulary_size": 1134,
+        "top_source_characters": [
+          {
+            "character": " ",
+            "count": 3157
+          },
+          {
+            "character": "a",
+            "count": 1223
+          },
+          {
+            "character": "h",
+            "count": 1072
+          },
+          {
+            "character": "q",
+            "count": 904
+          },
+          {
+            "character": "i",
+            "count": 780
+          },
+          {
+            "character": "n",
+            "count": 729
+          },
+          {
+            "character": "o",
+            "count": 576
+          },
+          {
+            "character": "t",
+            "count": 472
+          },
+          {
+            "character": "c",
+            "count": 464
+          },
+          {
+            "character": "m",
+            "count": 390
+          },
+          {
+            "character": "g",
+            "count": 385
+          },
+          {
+            "character": "l",
+            "count": 371
+          },
+          {
+            "character": "u",
+            "count": 363
+          },
+          {
+            "character": ".",
+            "count": 295
+          },
+          {
+            "character": "ê",
+            "count": 290
+          },
+          {
+            "character": "r",
+            "count": 281
+          },
+          {
+            "character": "p",
+            "count": 239
+          },
+          {
+            "character": "ô",
+            "count": 223
+          },
+          {
+            "character": "e",
+            "count": 220
+          },
+          {
+            "character": "j",
+            "count": 186
+          },
+          {
+            "character": "d",
+            "count": 184
+          },
+          {
+            "character": "?",
+            "count": 181
+          },
+          {
+            "character": "à",
+            "count": 160
+          },
+          {
+            "character": "b",
+            "count": 143
+          },
+          {
+            "character": "k",
+            "count": 129
+          },
+          {
+            "character": "v",
+            "count": 123
+          },
+          {
+            "character": "ì",
+            "count": 121
+          },
+          {
+            "character": "ù",
+            "count": 118
+          },
+          {
+            "character": ",",
+            "count": 117
+          },
+          {
+            "character": "â",
+            "count": 116
+          },
+          {
+            "character": "`",
+            "count": 104
+          },
+          {
+            "character": "B",
+            "count": 98
+          },
+          {
+            "character": "ò",
+            "count": 88
+          },
+          {
+            "character": "A",
+            "count": 86
+          },
+          {
+            "character": "è",
+            "count": 76
+          },
+          {
+            "character": "H",
+            "count": 73
+          },
+          {
+            "character": "y",
+            "count": 70
+          },
+          {
+            "character": "ơ",
+            "count": 62
+          },
+          {
+            "character": "ỉ",
+            "count": 54
+          },
+          {
+            "character": "ã",
+            "count": 53
+          }
+        ],
+        "top_target_characters": [
+          {
+            "character": " ",
+            "count": 3101
+          },
+          {
+            "character": "n",
+            "count": 1301
+          },
+          {
+            "character": "h",
+            "count": 914
+          },
+          {
+            "character": "i",
+            "count": 910
+          },
+          {
+            "character": "g",
+            "count": 635
+          },
+          {
+            "character": "t",
+            "count": 606
+          },
+          {
+            "character": "c",
+            "count": 515
+          },
+          {
+            "character": "a",
+            "count": 447
+          },
+          {
+            "character": "m",
+            "count": 436
+          },
+          {
+            "character": "ô",
+            "count": 331
+          },
+          {
+            "character": "à",
+            "count": 300
+          },
+          {
+            "character": "u",
+            "count": 299
+          },
+          {
+            "character": "đ",
+            "count": 292
+          },
+          {
+            "character": ".",
+            "count": 268
+          },
+          {
+            "character": "o",
+            "count": 227
+          },
+          {
+            "character": "ó",
+            "count": 209
+          },
+          {
+            "character": "ư",
+            "count": 207
+          },
+          {
+            "character": "l",
+            "count": 191
+          },
+          {
+            "character": "b",
+            "count": 176
+          },
+          {
+            "character": "?",
+            "count": 166
+          },
+          {
+            "character": "y",
+            "count": 161
+          },
+          {
+            "character": "r",
+            "count": 161
+          },
+          {
+            "character": "k",
+            "count": 146
+          },
+          {
+            "character": "á",
+            "count": 135
+          },
+          {
+            "character": "T",
+            "count": 126
+          },
+          {
+            "character": "B",
+            "count": 114
+          },
+          {
+            "character": "â",
+            "count": 108
+          },
+          {
+            "character": "ế",
+            "count": 108
+          },
+          {
+            "character": "ố",
+            "count": 104
+          },
+          {
+            "character": ",",
+            "count": 104
+          },
+          {
+            "character": "v",
+            "count": 99
+          },
+          {
+            "character": "ờ",
+            "count": 93
+          },
+          {
+            "character": "ơ",
+            "count": 89
+          },
+          {
+            "character": "ă",
+            "count": 84
+          },
+          {
+            "character": "s",
+            "count": 81
+          },
+          {
+            "character": "C",
+            "count": 77
+          },
+          {
+            "character": "ứ",
+            "count": 74
+          },
+          {
+            "character": "ì",
+            "count": 69
+          },
+          {
+            "character": "ạ",
+            "count": 66
+          },
+          {
+            "character": "ê",
+            "count": 66
+          }
+        ],
+        "suspicious_source_characters": [],
+        "suspicious_target_characters": [],
+        "word_pair_count": 2,
+        "phrase_pair_count": 599,
+        "possible_near_duplicates": {
+          "threshold": 0.88,
+          "pair_count": 3,
+          "examples": [
+            {
+              "left": {
+                "hre": "Ìh khôi caq poa `nhòq?",
+                "vi": "Anh ăn cơm chưa?"
+              },
+              "right": {
+                "hre": "Ìh khôi caq poa `nhòq?",
+                "vi": "Anh ăn cơm chưa?"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Mơi caq beng",
+                "vi": "mời ăn Bánh nếp"
+              },
+              "right": {
+                "hre": "Mơi caq beng",
+                "vi": "mời ăn Bánh nếp"
+              },
+              "similarity": 1.0
+            },
+            {
+              "left": {
+                "hre": "Ơ ơq ao vroq tô trương tô an ninh",
+                "vi": "Ờ ờ tôi làm tổ trưởng tổ an ninh"
+              },
+              "right": {
+                "hre": "Ơ ơq ao vroq tô trương tô an ninh",
+                "vi": "Ờ Ờ tôi làm tổ trưởng tôt an ninh"
+              },
+              "similarity": 0.9044
+            }
+          ]
+        },
+        "excel_max_row": 1000,
+        "excel_max_column": 26
+      }
+    }
+  },
+  "audio_archive": {
+    "filename": "TU_VUNG.zip",
+    "member_count": 1001,
+    "mp3_count": 1001,
+    "uncompressed_bytes": 23562941,
+    "min_numeric_stem": 1,
+    "max_numeric_stem": 1001
+  },
+  "dataset_counts": {
+    "word_pairs": 196,
+    "phrase_pairs": 804,
+    "sentence_pairs": 601
+  }
+}

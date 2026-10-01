@@ -1,0 +1,38 @@
+raw:
+  workbook: "data/TU VUNG TIENG HRE-VIET CHUAN HOA 4.2024 (CO LAN THAM KHAO).xlsx"
+  audio_archive: "data/TU_VUNG.zip"
+  lexicon:
+    sheet: "TỪ VỰNG"
+    header_row: 4
+    id_column: "STT"
+    hre_column: "TỪ TIẾNG HRÊ"
+    vi_column: "TỪ TIẾNG VIỆT"
+    notes_column: "GHI CHÚ"
+  sentences:
+    sheet: "CÂU"
+    header_row: 4
+    id_column: "STT"
+    hre_column: "CÂU TIẾNG HRÊ"
+    vi_column: "CÂU TIẾNG VIỆT"
+    notes_column: "GHI CHÚ"
+
+outputs:
+  processed_dir: "data/processed"
+  splits_dir: "data/splits"
+  report_json: "artifacts/data_report.json"
+  report_markdown: "artifacts/data_report.md"
+
+processing:
+  unicode_form: "NFC"
+  # A lexicon entry is a word pair only when both sides have exactly one whitespace token.
+  word_pair_max_tokens_per_side: 1
+  near_duplicate_threshold: 0.88
+  severe_leakage_threshold: 0.96
+  max_reasonable_characters: 1000
+
+split:
+  train: 0.8
+  validation: 0.1
+  test: 0.1
+  seed: 42
+
