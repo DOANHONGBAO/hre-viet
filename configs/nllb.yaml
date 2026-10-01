@@ -1,0 +1,42 @@
+model:
+  name: "facebook/nllb-200-distilled-600M"
+  source_language_proxy: "vie_Latn"
+  target_language: "vie_Latn"
+
+data:
+  train: "data/splits/train.parquet"
+  validation: "data/splits/validation.parquet"
+  test: "data/splits/test.parquet"
+
+training:
+  output_dir: "artifacts/models/nllb"
+  batch_size: 2
+  eval_batch_size: 4
+  epochs: 10
+  learning_rate: 0.0002
+  gradient_accumulation_steps: 8
+  max_source_length: 128
+  max_target_length: 128
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  gradient_checkpointing: false
+  fp16: true
+  seed: 42
+  logging_steps: 10
+  save_total_limit: 2
+
+lora:
+  rank: 8
+  alpha: 16
+  dropout: 0.1
+  target_modules: ["q_proj", "v_proj"]
+
+generation:
+  beam_size: 4
+  max_new_tokens: 128
+
+evaluation:
+  results: "artifacts/evaluation/nllb_results.csv"
+  predictions: "artifacts/evaluation/predictions/nllb_lora.csv"
+  comparison: "artifacts/evaluation/model_comparison.csv"
+  classical_results: "artifacts/evaluation/classical_results.csv"

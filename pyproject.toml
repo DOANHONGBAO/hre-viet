@@ -7,7 +7,7 @@ name = "hre-translate"
 version = "0.1.0"
 description = "Low-resource H're-Vietnamese machine translation platform"
 readme = "README.md"
-requires-python = ">=3.11,<3.12"
+requires-python = ">=3.11,<3.13"
 dependencies = [
   "numpy>=2.0,<3",
   "openpyxl>=3.1,<4",
@@ -21,6 +21,15 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+neural = [
+  "accelerate>=1,<2",
+  "datasets>=3,<5",
+  "peft>=0.13,<1",
+  "sentencepiece>=0.2,<1",
+  "torch>=2.2,<3",
+  "transformers>=4.45,<5",
+]
+tracking = ["mlflow>=3,<4"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

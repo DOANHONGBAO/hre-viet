@@ -1,0 +1,6 @@
+experiment_name: hre-translate
+store: mlflow.db
+artifacts: mlartifacts
+promotion:
+  max_relative_latency: 1.5
+  max_absolute_latency_increase_ms: 5.0

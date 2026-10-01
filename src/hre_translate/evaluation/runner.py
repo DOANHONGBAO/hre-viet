@@ -105,8 +105,12 @@ def training_types_for(name: str, config: dict[str, Any]) -> list[str]:
     return list(config[section]["training_types"])
 
 
-def run_evaluation(model_names: list[str], config_path: str | Path | None = None) -> pd.DataFrame:
-    config, root = load_config(config_path or root_classical_config())
+def run_evaluation(
+    model_names: list[str], config_path: str | Path | None = None, *, track: bool = False
+) -> pd.DataFrame:
+    chosen_config = config_path or root_classical_config()
+    config, root = load_config(chosen_config)
+    config_file = resolve(root, str(chosen_config))
     train_path = resolve(root, config["data"]["train"])
     test_path = resolve(root, config["data"]["test"])
     train = pd.read_parquet(train_path)
@@ -141,6 +145,24 @@ def run_evaluation(model_names: list[str], config_path: str | Path | None = None
         existing = existing.loc[~existing["model"].isin(model_names)]
     combined = pd.concat([existing, current], ignore_index=True).sort_values("model")
     combined.to_csv(output_path, index=False, encoding="utf-8-sig")
+    if track:
+        from hre_translate.tracking import log_experiment
+
+        for row in result_rows:
+            name = str(row["model"])
+            log_experiment(
+                root=root,
+                model_type=name,
+                metrics={
+                    key: row[key]
+                    for key in ("bleu", "chrf_pp", "latency_ms_mean", "latency_ms_p95", "oov_rate")
+                },
+                parameters=config[name],
+                datasets={"train": train_path, "test": test_path},
+                config_path=config_file,
+                artifacts=[output_path, predictions_dir / f"{name}.csv"],
+                latency_context="local_windows_classical",
+            )
     return current.sort_values("model").reset_index(drop=True)
 
 
