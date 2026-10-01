@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 770" role="img" aria-labelledby="title description">
+  <title id="title">HRE-TRANSLATE current architecture</title>
+  <desc id="description">Raw H'rê and Vietnamese parallel data is preprocessed into fixed train, validation, and test splits. Rule-based, statistical, translation-memory, NLLB LoRA, and hybrid methods are benchmarked. The selected statistical model is served by FastAPI to a React frontend, while MLflow tracks experiments and SQLite stores feedback. Deployment and monitoring are future work.</desc>
+  <defs>
+    <linearGradient id="canvas" x2="1" y2="1"><stop stop-color="#f7faff"/><stop offset="1" stop-color="#eff8f6"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#17345b" flood-opacity=".08"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#7390af"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;fill:#183451}
+      .title{font-size:35px;font-weight:800;letter-spacing:-1px}
+      .subtitle{font-size:17px;fill:#647b96}
+      .layer{font-size:18px;font-weight:800}
+      .label{font-size:15px;font-weight:700}
+      .small{font-size:13px;fill:#627991}
+      .eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;fill:#64829f}
+      .card{fill:#fff;stroke:#dbe7f1;stroke-width:1.5;rx:16;filter:url(#shadow)}
+      .line{fill:none;stroke:#8da6bd;stroke-width:2.5;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1440" height="770" fill="url(#canvas)"/>
+  <text x="72" y="73" class="eyebrow">CURRENT IMPLEMENTATION · RESEARCH DEMO</text>
+  <text x="72" y="122" class="title">HRE-TRANSLATE Architecture</text>
+  <text x="72" y="153" class="subtitle">Low-resource H’rê → Vietnamese translation · fixed-test evaluation · local serving</text>
+
+  <rect class="card" x="72" y="212" width="278" height="390"/>
+  <rect x="72" y="212" width="278" height="8" rx="4" fill="#3d8be8"/>
+  <text x="96" y="258" class="layer">01  Data layer</text>
+  <text x="96" y="286" class="small">Excel parallel words, phrases &amp; sentences</text>
+  <rect x="96" y="312" width="230" height="61" rx="10" fill="#eff6ff"/>
+  <text x="114" y="338" class="label">Raw bilingual data</text>
+  <text x="114" y="358" class="small">Source workbook preserved</text>
+  <path class="line" d="M211 376v31"/>
+  <rect x="96" y="416" width="230" height="61" rx="10" fill="#eff6ff"/>
+  <text x="114" y="442" class="label">Preprocess &amp; validate</text>
+  <text x="114" y="462" class="small">Normalize and check leakage</text>
+  <path class="line" d="M211 480v31"/>
+  <rect x="96" y="520" width="230" height="61" rx="10" fill="#eff6ff"/>
+  <text x="114" y="546" class="label">Fixed data splits</text>
+  <text x="114" y="566" class="small">Train / validation / test</text>
+
+  <path class="line" d="M354 405h42"/>
+  <rect class="card" x="402" y="212" width="368" height="390"/>
+  <rect x="402" y="212" width="368" height="8" rx="4" fill="#7658d8"/>
+  <text x="426" y="258" class="layer">02  Model layer</text>
+  <text x="426" y="286" class="small">Fitted on train data; compared on one test set</text>
+  <rect x="426" y="308" width="320" height="43" rx="9" fill="#f4f0ff"/>
+  <text x="443" y="335" class="label">Rule-Based + longest phrase</text>
+  <rect x="426" y="360" width="320" height="43" rx="9" fill="#f4f0ff"/>
+  <text x="443" y="387" class="label">IBM1 + Vietnamese bigram LM</text>
+  <rect x="426" y="412" width="320" height="43" rx="9" fill="#f4f0ff"/>
+  <text x="443" y="439" class="label">Translation Memory · char TF-IDF</text>
+  <rect x="426" y="464" width="320" height="43" rx="9" fill="#f4f0ff"/>
+  <text x="443" y="491" class="label">NLLB + LoRA · Hybrid retrieval</text>
+  <rect x="426" y="522" width="320" height="58" rx="10" fill="#ece6ff" stroke="#c8b9f5"/>
+  <text x="443" y="547" class="label">Fixed-test benchmark</text>
+  <text x="443" y="567" class="small">BLEU · chrF++ · latency context</text>
+
+  <path class="line" d="M774 404h40"/>
+  <rect class="card" x="820" y="212" width="252" height="168"/>
+  <rect x="820" y="212" width="252" height="8" rx="4" fill="#22aa9b"/>
+  <text x="844" y="258" class="layer">03  Experiments</text>
+  <text x="844" y="290" class="label">MLflow tracking</text>
+  <text x="844" y="316" class="small">Metrics, configs, run history</text>
+  <text x="844" y="341" class="small">Saved model artifacts</text>
+  <path class="line" d="M946 383v37"/>
+  <rect class="card" x="820" y="426" width="252" height="176"/>
+  <rect x="820" y="426" width="252" height="8" rx="4" fill="#e66d91"/>
+  <text x="844" y="472" class="layer">04  Serving</text>
+  <text x="844" y="505" class="label">FastAPI translation API</text>
+  <text x="844" y="532" class="small">Selected default: Statistical MT</text>
+  <text x="844" y="557" class="small">Explicit model routes available</text>
+  <text x="844" y="582" class="small">Feedback endpoint</text>
+
+  <path class="line" d="M1076 474h20V314h20"/>
+  <rect class="card" x="1122" y="212" width="246" height="174"/>
+  <rect x="1122" y="212" width="246" height="8" rx="4" fill="#e9a540"/>
+  <text x="1146" y="258" class="layer">05  Frontend</text>
+  <text x="1146" y="291" class="label">React · Vite · Tailwind</text>
+  <text x="1146" y="318" class="small">H’rê → Vietnamese UI</text>
+  <text x="1146" y="343" class="small">Translation + correction</text>
+  <rect class="card" x="1122" y="426" width="246" height="176"/>
+  <rect x="1122" y="426" width="246" height="8" rx="4" fill="#54a4b0"/>
+  <text x="1146" y="472" class="layer">06  Storage</text>
+  <text x="1146" y="505" class="label">SQLite feedback store</text>
+  <text x="1146" y="532" class="small">Corrections and ratings</text>
+  <text x="1146" y="557" class="small">Local, not training data</text>
+  <path class="line" d="M1120 565h-42"/>
+
+  <rect x="72" y="649" width="1296" height="70" rx="14" fill="#eaf0f5" stroke="#cfdde9" stroke-dasharray="6 6"/>
+  <text x="96" y="678" class="label">07  Deployment &amp; Ops · future work</text>
+  <text x="96" y="700" class="small">Containers, CI/CD, Kubernetes and monitoring are not part of the current implementation.</text>
+</svg>
