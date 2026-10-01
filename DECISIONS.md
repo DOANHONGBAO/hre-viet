@@ -1,5 +1,15 @@
 # Technical decisions
 
+## Stabilization: model selection and serving
+
+- The unchanged Stage 1 split has 1,275 train, 160 validation, and 160 test rows. All new live baselines fit only the train split. Historical NLLB and hybrid predictions are accepted only after source/reference/type and row-count checks against the same 160 test rows; hybrid is an offline replay, not a new end-to-end neural run.
+- The Rule-Based baseline deliberately reuses the tested dictionary implementation: NFC normalization, exact/casefold lookup, longest phrase priority, and copied unknowns. No H’rê syntactic rule was added without corpus evidence. Its BLEU/chrF++ equal dictionary by design.
+- Statistical MT uses the existing deterministic IBM1 EM model (10 maximum iterations) and adds an add-0.5-smoothed Vietnamese bigram LM trained on train targets. For each source token, a beam of 4 combines the top 3 IBM1 lexical candidates with weight 0.15 on LM log-probability. These settings were predeclared in `configs/stabilization.yaml`, not tuned against the test set. The decoder remains monotonic and can produce ungrammatical output; this is not full phrase-based SMT.
+- On the 160 fixed test pairs, statistical+LM achieved BLEU 6.277037 and chrF++ 23.059844 (mean 0.532237 ms, median 0.232550 ms in the latest local run). IBM1 reached chrF++ 20.718799, TM 17.809439, Rule-Based/dictionary 11.724265, full hybrid 9.176226, and NLLB 5.879872. Statistical MT is therefore the **selected default model** by chrF++, with BLEU and local latency also acceptable. This is a small-corpus result, not a general superiority claim or independent human evaluation.
+- The NLLB 273.075916 ms mean and 158.468711 ms median come from the historical Kaggle T4 run. Full-hybrid end-to-end latency is unavailable because its neural stage was replayed; no cross-machine or partial timings are presented as a controlled comparison. Parameter counts are left blank in the master table rather than inferred for every model.
+- `configs/serving.yaml` selects `statistical`; `auto` and `default` resolve to it. Explicit `hybrid` retains the earlier router for experimentation. The service loads the saved statistical artifact when present, and can refit it from train-only data if absent. Neural remains lazy and optional.
+- React/Vite/Tailwind is the primary local UI. It queries `/models` to show only available choices, calls FastAPI for translations/feedback, and does not implement translation logic client-side. CORS is restricted to local Vite origins; this is not authorization for public exposure. Streamlit code is retained as a prototype, not the primary app.
+
 ## Normalization
 
 - Normalize all text to Unicode NFC.

@@ -1,5 +1,15 @@
 # Project progress
 
+## Stabilization (2026-10-01)
+
+- Inspected the repository, fixed train/validation/test splits, saved NLLB adapter/base, existing metrics, API, and Streamlit prototype. No Seq2Seq-scratch, Transformer-scratch, or ByT5 implementation/checkpoint exists here; these were not benchmarked.
+- Added a Rule-Based wrapper reusing the working dictionary/longest-phrase implementation; no unsupported H’rê grammar rules were invented.
+- Extended IBM Model 1 with validated save/load and added a small smoothed Vietnamese bigram LM with beam decoding. Saved train-only parameters in `artifacts/models/statistical/`.
+- Benchmarked Rule-Based, dictionary, IBM1, statistical+LM, and Translation Memory live on the same 160 test rows. Rechecked NLLB and all four Stage 4 ablation predictions against that identical test split and labeled their latency contexts honestly.
+- Wrote `artifacts/evaluation/model_comparison.csv` and a seed-42 reproducible 24-row `model_outputs.csv`; selected statistical MT as the configured default. Scores and limitations are in `DECISIONS.md`.
+- Added `auto`/`default` and explicit model choices to FastAPI without duplicating translation algorithms. Replaced the Streamlit prototype as primary UI with responsive React/Vite/Tailwind in `apps/web/`; old `ui/app.py` remains as an archived prototype.
+- Python: 37 tests passed. Frontend: TypeScript/Vite build and ESLint passed; local HTTP serving and default translation request succeeded. Browser screenshot QA was unavailable because the desktop UI helper failed. No Kubernetes, monitoring, or new deployment infrastructure was added.
+
 ## Completed
 
 - Inspected repository inputs and identified the workbook and audio archive.
