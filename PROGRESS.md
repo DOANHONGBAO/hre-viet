@@ -2,6 +2,10 @@
 
 ## Stabilization (2026-10-01)
 
+- Polished the React demo into one focused H’rê → Vietnamese translator screen: no model selector, no extra tabs, and a compact optional correction flow. The frontend sends `model: default`; model selection remains available through the API only.
+- Added `docs/images/architecture.png` and editable SVG based on the image supplied in `ui/`. The README diagram depicts implemented components and labels deployment/monitoring as future work; the original concept image is retained as a reference.
+- Verified desktop/mobile layout in headless Edge, no horizontal mobile overflow, no model selector, a successful live `/translate` request, and frontend build/lint. The backend test suite remains green.
+
 - Inspected the repository, fixed train/validation/test splits, saved NLLB adapter/base, existing metrics, API, and Streamlit prototype. No Seq2Seq-scratch, Transformer-scratch, or ByT5 implementation/checkpoint exists here; these were not benchmarked.
 - Added a Rule-Based wrapper reusing the working dictionary/longest-phrase implementation; no unsupported H’rê grammar rules were invented.
 - Extended IBM Model 1 with validated save/load and added a small smoothed Vietnamese bigram LM with beam decoding. Saved train-only parameters in `artifacts/models/statistical/`.

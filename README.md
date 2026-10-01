@@ -2,21 +2,15 @@
 
 Low-resource H’rê → Vietnamese machine translation, built as a reproducible research platform and local product demo.
 
-## Overview
-
-HRE-TRANSLATE compares lexical, statistical, retrieval, and neural translation on one fixed held-out test set. The selected default is exposed through FastAPI and a responsive React interface. Training and evaluation artifacts are auditable; MLflow provides local experiment tracking. This is a research demo, not a validated production translator.
-
 ## Architecture
 
-```mermaid
-flowchart LR
-    A[Parallel data] --> B[Normalize and split]
-    B --> C[Translation models]
-    C --> D[Fixed-test evaluation]
-    D --> E[Selected default]
-    E --> F[FastAPI]
-    F --> G[React web UI]
-```
+![Current HRE-TRANSLATE architecture](docs/images/architecture.png)
+
+The diagram shows implemented components; deployment and monitoring are labeled as future work. [Editable SVG](docs/images/architecture.svg) and the supplied concept image in `ui/` are retained as references.
+
+## Overview
+
+HRE-TRANSLATE compares lexical, statistical, retrieval, and neural translation on one fixed held-out test set. FastAPI serves the selected default through a focused React interface, while MLflow records local experiments. This is a research demo, not a validated production translator.
 
 ## Translation approaches
 
@@ -36,14 +30,10 @@ All rows use the same 160 held-out test pairs. Scores are corpus BLEU and chrF++
 | IBM Model 1 | 4.249 | 20.719 | 0.272 / 0.141 |
 | Translation Memory | 4.553 | 17.809 | 35.036 / 34.643 |
 | Rule-Based | 2.331 | 11.724 | 0.047 / 0.032 |
-| Dictionary | 2.331 | 11.724 | 0.031 / 0.025 |
-| NLLB + TM | 1.739 | 9.177 | Not measured end-to-end |
 | Full hybrid | 1.739 | 9.176 | Not measured end-to-end |
-| NLLB + dictionary | 0.467 | 6.889 | Not measured end-to-end |
 | NLLB + LoRA | 0.435 | 5.880 | 273.076 / 158.469 (Kaggle T4) |
-| NLLB only replay | 0.435 | 5.880 | Not measured end-to-end |
 
-Statistical MT is the selected default by chrF++; this is not a claim of general superiority beyond this small test set. NLLB uses verified Kaggle predictions; hybrid replays those predictions with local retrieval. Neural latency was measured on different hardware and is not directly comparable. Rule-Based reuses the dictionary rules, so identical quality scores are expected.
+Statistical MT is the selected default by chrF++; this is not a claim of general superiority beyond this small test set. The full CSV includes the dictionary and neural ablations. NLLB uses verified Kaggle predictions; hybrid replays those predictions with local retrieval. Neural latency was measured on different hardware and is not directly comparable.
 
 ## Tech stack
 
@@ -79,6 +69,7 @@ Install optional neural and tracking dependencies only when needed: `python -m p
     apps/web/     React demo
     configs/      Model, benchmark, and serving settings
     data/         Original, processed, and fixed split data
+    docs/images/  Current architecture diagram
     src/          Translation, evaluation, tracking, and API code
     scripts/      Benchmark and training entrypoints
     tests/        Python tests
