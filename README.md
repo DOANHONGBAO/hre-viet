@@ -2,7 +2,7 @@
 
 Low-resource H’rê–Vietnamese machine translation platform. The long-term project covers data quality, classical baselines, NLLB-based neural translation, retrieval-augmented translation, experiment tracking, serving, deployment, and monitoring.
 
-Stages 1–5 are complete. Stage 4 combines the saved NLLB/LoRA run with train-only lexical and sentence retrieval; Stage 5 tracks experiments locally with MLflow. APIs, containers, Kubernetes, and monitoring remain intentionally out of scope.
+Stages 1–6 are complete. Stage 4 combines the saved NLLB/LoRA run with train-only lexical and sentence retrieval; Stage 5 tracks experiments locally with MLflow; Stage 6 adds a local FastAPI and Streamlit demo. Containers, Kubernetes, and monitoring remain intentionally out of scope.
 
 ## Current data
 
@@ -195,6 +195,39 @@ The NLLB training command now performs fixed-test evaluation after training so t
 
 Every run starts as `Candidate`. The current `Champion` tag is on the historical IBM1 run (chrF++ 20.718799, mean latency 0.260700 ms). To review another run, use `python scripts/promote_model.py RUN_ID`; only `--apply` changes tags. A candidate must improve chrF++, use the same dataset version and latency context, and keep mean latency at most the larger of 1.5× Champion latency or Champion latency + 5 ms. Replay/cross-hardware results cannot be promoted by this rule. Tags are an experiment-management concept, **not** a deployed service or registered model artifact.
 
+## Local API and demo (Stage 6)
+
+The FastAPI app reuses the Stage 2 dictionary/TM and the Stage 4 `HybridTranslator`; the API does not implement a second translation algorithm. It indexes only `data/splits/train.parquet` at startup. NLLB is loaded lazily on its first required request, so `/health`, `/models`, feedback, and high-similarity TM routes do not load the 600M-parameter model. The default `model: "auto"` uses the hybrid router. Explicit choices are `dictionary`, `translation_memory`, `nllb`, and `hybrid`.
+
+Install serving dependencies in the project environment:
+
+```powershell
+& "C:\Users\doanh\.conda\envs\hre-translate-stage1\python.exe" -m pip install -e ".[serve,neural]"
+```
+
+The LoRA adapter is local but ignored by Git. For a fresh machine, place it at `artifacts/models/nllb/final_adapter/` and download the licensed 2.46 GB base weights once (Internet required); both directories remain Git-ignored:
+
+```powershell
+& "C:\Users\doanh\.conda\envs\hre-translate-stage1\python.exe" -c "from huggingface_hub import snapshot_download; snapshot_download('facebook/nllb-200-distilled-600M', local_dir='artifacts/models/nllb/base_model', allow_patterns=['config.json','generation_config.json','pytorch_model.bin'])"
+```
+
+Run these in two separate PowerShell terminals from the repository root:
+
+```powershell
+& "C:\Users\doanh\.conda\envs\hre-translate-stage1\python.exe" -m uvicorn hre_translate.serving.app:app --host 127.0.0.1 --port 8000
+& "C:\Users\doanh\.conda\envs\hre-translate-stage1\python.exe" -m streamlit run ui/app.py --server.address 127.0.0.1 --server.port 8501
+```
+
+Open the UI at `http://127.0.0.1:8501`; interactive API docs are at `http://127.0.0.1:8000/docs`. Both bind to localhost only. API endpoints are `GET /health`, `GET /models`, `POST /translate`, `POST /translate/batch` (1–16 items), and `POST /feedback`. The request language pair is fixed to `hre` → `vi`; blank text, unsupported model/language, and invalid feedback ratings receive HTTP 422. The response includes the selected route/model, translation, wall-clock latency, dictionary matches, retrieved examples, and similarity when applicable.
+
+PowerShell curl example (a train sentence expected to take the TM route):
+
+```powershell
+curl.exe -X POST http://127.0.0.1:8000/translate -H "Content-Type: application/json" --data-binary '{"text":"Lăm kleq kô pa zâu","source":"hre","target":"vi","model":"auto"}'
+```
+
+The UI is intentionally basic: it establishes the API contract and feedback flow, leaving visual design open for future alternatives without changing translation logic. It has a correction box and optional 1–5 rating. Feedback is saved to local SQLite `artifacts/feedback/feedback.sqlite3`, which is Git-ignored; it is **not** automatically retraining data. `configs/serving.yaml` holds model/feedback paths. The local NLLB CPU-only smoke test succeeded, but its first short request took about 34 seconds including cold load. The Stage 3 NLLB quality remains poor; this is a research demo, not a production translator. There is no authentication, so keep both servers bound to `127.0.0.1` and do not expose them publicly.
+
 ## Roadmap
 
 1. **Stage 1 — complete:** data inspection, normalization, validation, leakage-aware splitting, and tests.
@@ -202,5 +235,5 @@ Every run starts as `Candidate`. The current `Champion` tag is on the historical
 3. **Stage 3 — complete:** NLLB-600M LoRA training, fixed-test evaluation, and comparison with classical baselines.
 4. **Stage 4 — complete:** train-only retrieval, hybrid routing, replay benchmark, and ablations.
 5. **Stage 5 — complete:** MLflow tracking, historical import, and manual Champion/Candidate review.
-5. FastAPI and web UI.
-6. Docker, CI/CD, Kubernetes, and monitoring.
+6. **Stage 6 — complete:** local FastAPI translation/feedback endpoints and Streamlit demo.
+7. Docker, CI/CD, Kubernetes, and monitoring.

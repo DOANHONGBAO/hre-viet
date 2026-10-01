@@ -12,3 +12,4 @@ mlflow.db
 mlflow.db-*
 mlartifacts/
 artifacts/.pytest_tmp/
+artifacts/feedback/

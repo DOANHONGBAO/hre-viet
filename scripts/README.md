@@ -25,3 +25,7 @@ python scripts/import_kaggle_results.py artifacts/kaggle/hre-nllb-stage3-output.
 # Stage 5
 
 `python scripts/import_historical_runs.py` imports saved Stage 2–4 results into the local MLflow experiment without rerunning them. `python scripts/promote_model.py RUN_ID` performs a read-only promotion review; `--apply` changes Champion/Candidate tags only. Evaluation entrypoints log new MLflow runs by default; `--no-mlflow` opts out.
+
+# Stage 6
+
+Run the API with `python -m uvicorn hre_translate.serving.app:app --host 127.0.0.1 --port 8000` and the UI in another terminal with `python -m streamlit run ui/app.py --server.address 127.0.0.1 --server.port 8501`. Use the project Python environment; `streamlit.exe` might not be on your PowerShell PATH.

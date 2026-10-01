@@ -31,14 +31,19 @@
 - Installed MLflow 3.16.1 and integrated tracking with classical evaluation, NLLB training/evaluation, and the Stage 4 hybrid benchmark.
 - Created the `hre-translate` experiment in a local SQLite store and idempotently imported nine saved Stage 2–4 evaluation results with config, dataset hashes, metrics, artifacts, provenance, and latency context.
 - Added manual Champion/Candidate review; IBM1 is the initial Champion tag. TM was correctly rejected because its chrF++ is lower. No model was deployed.
+- Added Stage 6 FastAPI endpoints for health, models, single/batch translation, and validated feedback stored in local SQLite; API translation delegates to existing dictionary, TM, and hybrid services.
+- Added Streamlit demo with source input, output/model/latency, dictionary matches, retrieved examples, and correction/rating feedback.
+- Verified local API startup and TM route on a real train sentence; downloaded the NLLB base model and verified one offline CPU inference with the saved LoRA adapter (about 34 seconds cold-start).
+- Verified Streamlit starts on localhost and its translation form renders the real API result without exceptions.
+- Verified an NLLB request through the running FastAPI server returned HTTP 200 and marked the neural model loaded; all 32 pytest tests and Ruff checks pass.
 
 ## In Progress
 
-- None. Stage 5 is complete.
+- None. Stage 6 local serving/demo is complete.
 
 ## Next
 
-- Stop after Stage 5. API/deployment work requires a separate request.
+- Stop after Stage 6. Containers, Kubernetes, and deployment work require a separate request.
 
 ## Issues
 
@@ -51,3 +56,5 @@
 - The returned Kaggle ZIP did not contain the modified runtime config, so exact training settings beyond the saved summary/trainer state cannot be independently verified.
 - Stage 4 replays saved Kaggle NLLB predictions for the fixed test set; its local processing latency excludes NLLB generation and is not comparable to the Kaggle T4 latency. Live hybrid inference is available but was not benchmarked end-to-end on this CPU-only machine.
 - Historical MLflow runs record the Git checkout at import time; the original Kaggle commit is unavailable. Replay latency is tagged separately and cannot support Champion promotion.
+- The NLLB base weights are 2.46 GB and are not committed; fresh clones need a one-time download. CPU inference is slow, and the measured NLLB quality is not suitable for production.
+- The Stage 6 app is localhost-only and has no authentication; do not expose it on a public interface. Feedback stays in a Git-ignored SQLite database and is not used for automatic retraining.

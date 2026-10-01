@@ -46,6 +46,7 @@ class NLLBTranslator:
         beam_size: int,
         max_source_length: int,
         max_new_tokens: int,
+        local_files_only: bool = False,
     ) -> NLLBTranslator:
         import torch
         from peft import PeftModel
@@ -56,8 +57,11 @@ class NLLBTranslator:
             adapter_path,
             src_lang=source_language,
             tgt_lang=target_language,
+            local_files_only=local_files_only,
         )
-        base = AutoModelForSeq2SeqLM.from_pretrained(model_name, dtype=dtype)
+        base = AutoModelForSeq2SeqLM.from_pretrained(
+            model_name, dtype=dtype, local_files_only=local_files_only
+        )
         model = PeftModel.from_pretrained(base, adapter_path)
         return cls(
             model,
