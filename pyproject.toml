@@ -33,9 +33,9 @@ tracking = ["mlflow>=3,<4"]
 serve = [
   "fastapi>=0.115,<1",
   "httpx>=0.27,<1",
-  "streamlit>=1.40,<2",
   "uvicorn>=0.30,<1",
 ]
+legacy-ui = ["streamlit>=1.40,<2"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

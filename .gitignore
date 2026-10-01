@@ -13,3 +13,6 @@ mlflow.db-*
 mlartifacts/
 artifacts/.pytest_tmp/
 artifacts/feedback/
+apps/web/node_modules/
+apps/web/dist/
+apps/web/*.tsbuildinfo
