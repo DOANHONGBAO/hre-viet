@@ -1,0 +1,161 @@
+﻿dataset_type,source,reference,hypothesis,model,similarity,retrieved_terms,retrieved_examples,replay_processing_ms,nllb_kaggle_latency_ms
+lexicon,'Nâng,Thật,'Được rồi.,nllb_lora,0.0,[],[],0.18480001017451286,171.32378600035736
+lexicon,'Ngeo,Trái,"""Hãy lên",nllb_lora,0.0,[],[],0.1330000231973827,170.1301949997287
+lexicon,Alac,Rượu,Chết tiệt,nllb_lora,0.0,[],[],0.125700025819242,176.00033700000495
+lexicon,Caq,Ăn,Thêm vào,nllb_lora,0.0,[],[],0.1230000052601099,124.05977099979282
+lexicon,Dhiq,hết,Dhiq,nllb_lora,0.0,[],[],0.1170000177808106,118.70880299966302
+lexicon,Zuaq,Dựa,Zuaq,nllb_lora,0.0,[],[],0.11789996642619371,158.740896999916
+lexicon,Hnoq,thấy,Hnoq,nllb_lora,0.0,[],[],0.11500000255182385,138.88044000032096
+lexicon,Hri,Rơm,Hri,nllb_lora,0.0,[],[],0.12079998850822449,138.44510099988838
+lexicon,Hwit,quét,Hwit,nllb_lora,0.0,[],[],0.11369999265298247,118.96912300016992
+lexicon,Mơi,Mời,Đúng rồi.,nllb_lora,0.0,[],[],0.11500000255182385,136.17841599989333
+lexicon,Moiq,số1,Moiq,nllb_lora,0.0,[],[],0.11140003334730864,116.77012500013008
+lexicon,Nơih,ngực,Giấc mơ,nllb_lora,0.0,[],[],0.12290000449866056,137.16290799993658
+lexicon,Razêu,Nứa,Này.,nllb_lora,0.0,[],[],0.11399999493733048,135.05584199992882
+phrase,Atiq ca aih,sau đó,Atiq ca aih,nllb_lora,0.0,[],[],0.11600001016631722,155.96298400032538
+phrase,A’mua,"dơ bẩn, mất vệ sinh",Sản phẩm,nllb_lora,0.0,[],[],0.1142999972216785,139.1110990002744
+phrase,'Ne,"giữa, một nửa",'Ne,nllb_lora,0.0,[],[],0.11100003030151129,146.17422099991018
+phrase,'Nhơq y dhoa,"Chưa hình thành, chưa có vẻ","""Bạn có thể làm thế nào?",nllb_lora,0.0,[],[],0.11829996947199106,241.20024900003045
+phrase,Ê,"đấy, thế",Đúng rồi.,nllb_lora,0.0,[],[],0.10890001431107521,143.67799299998296
+phrase,Atât mê,Ngừng mưa,Tôi rất đam mê,nllb_lora,0.0,[],[],0.11449999874457717,201.49708499957345
+phrase,Atiq ca aih,Sau đó,Atiq ca aih,nllb_lora,0.0,[],[],0.11439999798312783,155.54690000044502
+phrase,Ca vô aih,Ai đó,Không có ai.,nllb_lora,0.0,[],[],0.12280000373721123,159.9138269998548
+phrase,Va,Chúng mình (2 người),4,nllb_lora,0.0,[],[],0.11329998960718513,97.88094199984698
+phrase,Bây,"Các, những, bầy, lũ, bọn, đàn, (các vị...)",Bây giờ,nllb_lora,0.0,[],[],0.12169999536126852,116.6727479999281
+phrase,Bê,"Mặt, bề, bên, phía, hướng",Tâm hồn,nllb_lora,0.0,[],[],0.11239998275414109,117.2313590000158
+phrase,Bênh,bệnh (như tiếng việt),Sự kiên nhẫn,nllb_lora,0.0,[],[],0.11899997480213642,138.42157399994903
+phrase,Tê,To lớn,Đúng rồi.,nllb_lora,0.0,[],[],0.11280004400759935,140.63605100000132
+phrase,Căn pa'rong,Giàu có,Ngôi nhà pa'rong,nllb_lora,0.0,[],[],0.11560000712051988,195.8860510003433
+phrase,Caq dheng,Ăn tết,Thường thì,nllb_lora,0.0,[],[],0.1134999911300838,117.97181399970214
+phrase,Caq mêch,"ăn no, ngán",Trò chơi,nllb_lora,0.0,[],[],0.11510000331327319,157.64968500025134
+phrase,Chê tu,"che phủ, tủ",Này.,nllb_lora,0.0,[],[],0.15869998605921865,116.9115329998931
+phrase,Cleac clêm,"(ruột, gan) ruột,thịt",Cleac Clem,nllb_lora,0.0,[],[],0.11830002767965198,155.97068199986097
+phrase,Hnây,"dạy, hướng dẫn",Ở đây.,nllb_lora,0.0,[],[],0.11419999646022916,118.14435399992362
+phrase,Ca dhê,"cây trảy, trúc",Đạo diễn,nllb_lora,0.0,[],[],0.11550000635907054,137.38864900005865
+phrase,Dhêh xrôh,"mạnh, xiết (chảy mạnh, xiết), đổ xuống",Nỗi sợ hãi,nllb_lora,0.0,[],[],0.1175999641418457,157.5888950001172
+phrase,Dhênh pêt loang,Tết trồng cây,Lớp lông,nllb_lora,0.0,[],[],0.11820002691820264,137.14819599999828
+phrase,Vu wia,tạm được,Nhanh Nhanh Nhanh Nhanh Nhanh,nllb_lora,0.0,[],[],0.11290004476904869,361.28687999962494
+phrase,'Mrim dho,mỉm cười,'Mrim dho,nllb_lora,0.0,[],[],0.11299998732283711,156.86708099974567
+phrase,Enh,"Muốn, thích,ưng",Nhanh,nllb_lora,0.0,[],[],0.11749996338039637,116.9379090001712
+phrase,Eng ka lah,"từ ngày xưa, xa xưa",Đúng rồi.,nllb_lora,0.0,[],[],0.11529994662851095,156.33148699998856
+phrase,Con kalô,con trai,Thằng khốn,nllb_lora,0.0,[],[],0.13040000339969993,136.2557909997122
+phrase,Hagô,"không may mắn, xui xẻo",Hạ-gô,nllb_lora,0.0,[],[],0.11329998960718513,158.3861839999372
+phrase,Hnăn,"đuổi, rượt đuổi",Tháo,nllb_lora,0.0,[],[],0.11470000026747584,99.40554400009204
+phrase,Hnây,"dạy dỗ, chỉ dẫn, dạy",Ở đây.,nllb_lora,0.0,[],[],0.1453000004403293,117.184504999841
+phrase,Hnim mayq,nhà máy,Hnim mayq,nllb_lora,0.0,[],[],0.13229995965957642,160.9445549997872
+phrase,Ha chêh,hắt hơi,Đúng rồi.,nllb_lora,0.0,[],[],0.11689995881170034,156.571600999996
+phrase,Ha ngêp,mát mẻ,Đồ lợn,nllb_lora,0.0,[],[],0.11559994891285896,165.31928399990647
+phrase,Ha tôq pa nâc,ấm no,Cảm ơn anh.,nllb_lora,0.0,[],[],0.11779996566474438,157.70538100014164
+phrase,Ha tuông,"trò chuyện, tâm sự",Nhanh Nhanh Nhanh,nllb_lora,0.0,[],[],0.11720001930370927,237.63185200004955
+phrase,H’lâu,"Không dễ, không thuận lợi",Lâu,nllb_lora,0.0,[],[],0.11999998241662979,119.05331400021169
+phrase,Plôh,"mọc mầm, nhô ra",Bơi,nllb_lora,0.0,[],[],0.11439999798312783,118.08866299998044
+phrase,Kapoich,nói chuyện,Kapoich,nllb_lora,0.0,[],[],0.11369999265298247,136.9690400001673
+phrase,Hi manâyq,"ngày nay, hiện nay",Xin chào.,nllb_lora,0.0,[],[],0.11710001854225993,118.1589980001263
+phrase,Uh hrooc,đau ốm,Uh hrooc,nllb_lora,0.0,[],[],0.1170000177808106,360.89154499995857
+phrase,Ia canh,gà mái,Hắn là người bảo vệ.,nllb_lora,0.0,[],[],0.11239998275414109,178.48740099998395
+phrase,Jah may mo,được may mắn,Đúng rồi.,nllb_lora,0.0,[],[],0.11309998808428645,160.186486999919
+phrase,Ro,gùi dẹp,Ro,nllb_lora,0.0,[],[],0.10850001126527786,98.467502999938
+phrase,I loq,"cũng biết, vẫn biết",I loq,nllb_lora,0.0,[],[],0.1314000110141933,139.7439160000431
+phrase,Jreo hla,thuốc lá,Giới thiệu,nllb_lora,0.0,[],[],0.11379999341443181,138.37493299979542
+phrase,Ju ja,dư giả,Ju ja,nllb_lora,0.0,[],[],0.11070002801716328,138.06511999973736
+phrase,Ka đoa,phòng hờ,Đúng rồi.,nllb_lora,0.0,[],[],0.1154000055976212,138.88401300027908
+phrase,Ka jeo,gió,Cảm ơn!,nllb_lora,0.0,[],[],0.11340004857629538,138.79983500009985
+phrase,Ka lung,Cái trống lớn,Nhanh lên.,nllb_lora,0.0,[],[],0.11470000026747584,159.127258999888
+phrase,Kanơm,"Dựa, nhờ",Cây nấm,nllb_lora,0.0,[],[],0.11389999417588115,137.66827800009196
+phrase,Tap,đẻ trứng,Nhập,nllb_lora,0.0,[],[],0.11020002420991659,123.9039510001021
+phrase,Khê hlâp,Trăng lặng,Chết tiệt,nllb_lora,0.0,[],[],0.11360005009919405,159.8595740001656
+phrase,Khê katoa,Trăng rằm,Khó hơn tất cả,nllb_lora,0.0,[],[],0.12959999730810523,156.846964000124
+phrase,Khoi,"Đã, rồi",Bọn tôi,nllb_lora,0.0,[],[],0.11129997437819839,119.42481899995984
+phrase,Cong,vòng tay,Cong,nllb_lora,0.0,[],[],0.11009996524080634,139.22419100026673
+phrase,Krac,huỳnh đàn,Crac,nllb_lora,0.0,[],[],0.10980002116411924,118.88364800006455
+phrase,Krong,"lưng, sau lưng",Krong,nllb_lora,0.0,[],[],0.11490000179037452,117.07088699995438
+phrase,Liq lân,"bừa bãi, bậy bạ",Liq lân,nllb_lora,0.0,[],[],0.11229998199269176,137.5612850001744
+phrase,Loang k’rêng,cây dền,Phong trào,nllb_lora,0.0,[],[],0.11520000407472253,136.47737500014046
+phrase,ji loq,"cũng biết, vẫn biết",Ji loq,nllb_lora,0.0,[],[],0.1107999705709517,137.0754190002117
+phrase,'Mu,bóng người,'Ngươi,nllb_lora,0.0,[],[],0.11009996524080634,120.87195999993128
+phrase,Gah,phát dọn,Chết tiệt.,nllb_lora,0.0,[],[],0.12179999612271786,159.6678660002908
+phrase,Moiq jât,10,Moiq jât,nllb_lora,0.0,[],[],0.1126999850384891,137.0472669996161
+phrase,Moiq ngan,một ngàn,Moiq và,nllb_lora,0.0,[],[],0.11179997818544507,158.9964599997984
+phrase,Mua padăng,"Mùa nắng, hạn hán",Mua đồ đạc,nllb_lora,0.0,[],[],0.11420005466789007,159.05547200009096
+phrase,Ngao ngaiq,toàn bộ,Vũ trụ,nllb_lora,0.0,[],[],0.12059998698532581,116.20693199984088
+phrase,Goi dheac,đầu nguồn,Goi dheac,nllb_lora,0.0,[],[],0.1126999850384891,156.13155099981668
+phrase,Oi caq,Ăn ở,Ôi!,nllb_lora,0.0,[],[],0.1107999705709517,158.55123799974535
+phrase,pa dring,Cầu vồng,Pa dring,nllb_lora,0.0,[],[],0.11209998046979308,117.65378100017188
+phrase,Pa dro,Buôn bán,Thủy quân lục chiến,nllb_lora,0.0,[],[],0.11029996676370502,178.1798090000848
+phrase,Pa gheo,"Làm hoàn thành, hoàn tất, cuối cùng",Bồ tát,nllb_lora,0.0,[],[],0.12410001363605261,136.9588620000286
+phrase,Pa nâc,no,Đúng rồi.,nllb_lora,0.0,[],[],0.11289998656138778,158.27906699996674
+phrase,Pa neang,cau,Đúng rồi.,nllb_lora,0.0,[],[],0.11140003334730864,136.60060599977442
+phrase,Pa rêu,Đánh thức,Đồ đéo,nllb_lora,0.0,[],[],0.1126999850384891,143.89970100000937
+phrase,Patiah,ví dụ,Patiah,nllb_lora,0.0,[],[],0.12149999383836985,148.54074000004402
+phrase,Pad hiq pa dhâng,tất cả,Pad hiq pa,nllb_lora,0.0,[],[],0.11690001701936126,176.78529000022536
+phrase,panec,"phong tục, phương pháp, cách thức",Panc,nllb_lora,0.0,[],[],0.11659995652735233,120.1868220000506
+phrase,Papêp,"nghèo khổ, túng thiếu",Bảng giấy,nllb_lora,0.0,[],[],0.11249998351559043,117.4327390003782
+phrase,patơ lem,điềm lành,bơ bơ,nllb_lora,0.0,[],[],0.11369999265298247,139.02185899996766
+phrase,patơ 'mêq,điềm xấu,Pat 'mêq,nllb_lora,0.0,[],[],0.11409999569877982,157.31627399964054
+phrase,Pleng phi,Hạt gạo,Pleng phi,nllb_lora,0.0,[],[],0.11189997894689441,139.6518249998735
+phrase,Plinh taneh,đất trời (trời đất),Màn cối,nllb_lora,0.0,[],[],0.11510000331327319,141.12752400023965
+phrase,Quai gon,Củ mỳ,Quay gon,nllb_lora,0.0,[],[],0.11260004248470068,140.0565080002707
+phrase,Ra nhoa,"điên, khùng",Nhanh lên.,nllb_lora,0.0,[],[],0.1115999766625464,156.86854900013714
+phrase,Ra viaq,"khéo léo, tỉ mĩ",Ra viaq,nllb_lora,0.0,[],[],0.11139997513964772,118.8284449999628
+phrase,Ra zôt,thường xuyên,Nhanh lên.,nllb_lora,0.0,[],[],0.7681999704800546,160.18586200016216
+phrase,Ranuh,giãy giụa,Ranuh,nllb_lora,0.0,[],[],0.1824999926611781,118.10009399960109
+sentence,`Boi baiq jàt mòiq,Bài thứ hai mươi mốt,`Boi baiq jàt mòiq,nllb_lora,0.0,[],[],0.13200001558288932,257.5870410000789
+sentence,`Boi baiq jàt piq,Bài thứ hai mươi ba,`Boi baiq jàt piq,nllb_lora,0.0,[],[],0.1202999847009778,693.8695619996906
+sentence,`Boi mòiq jàt mòiq,Bài thứ mười một,`Boi mòiq jàm mòiq,nllb_lora,0.0,[],[],0.11959997937083244,276.3390969998909
+sentence,`Boi padam,Bài thứ nam,`Boi padam,nllb_lora,0.0,[],[],0.1142999972216785,160.18906399995103
+sentence,`Boi piq jàt cachìn,Bài thứ ba mươi chín,`Boi piq jạt cachìn,nllb_lora,0.0,[],[],0.11910003377124667,254.37190399998144
+sentence,ao lam bôq đôiq,em đi bộ đội.,n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n,nllb_lora,0.0,[],[],0.12149999383836985,2595.2791249997063
+sentence,Au doih hãq tèm cađac.,Tôi lấy ở đó ra và quàng đi rồi.,Tôi không muốn nói với ông.,nllb_lora,0.0,[],[],0.12240000069141388,215.7969499999126
+sentence,Au i pôn đam ruoang,Tôi có 4 đám ruộng,Cố gắng làm thế nào?,nllb_lora,0.0,[],[],0.12069998774677515,197.09166800021197
+sentence,Au jiq cleac.,Tôi đau bụng quá.,Au jiq cleac.,nllb_lora,0.0,[],[],0.1162000116892159,177.95447099979356
+sentence,Au lam rot dahèq.,Tôi đi mua đồ.,Tôi không biết.,nllb_lora,0.0,[],[],0.11989998165518045,156.55495199962388
+sentence,Au 'nhòq song padon dahvèq.,Tôi chưa sửa xoạn đồ xong.,Cứ như thế thôi.,nllb_lora,0.0,[],[],0.12440001592040062,177.58950400002504
+sentence,Au ùh `nì broq cleq.,Ổng không thể dậy đi đâu hết.,Này. Này. Này. Này. Này. Này. Này. Này. Này. Này.,nllb_lora,0.0,[],[],0.12040004367008805,659.132129000227
+sentence,Au yùg kiac loq cap cachit.,Tôi sợ gặp cọp nó sẽ vồ và giết tôi.,"Tôi không biết, tôi không biết.",nllb_lora,0.0,[],[],0.12400001287460327,215.1557619999949
+sentence,Bà Hrê sa dìq jaq.,Tiếng Hrê khó lắm.,Bà Hạ Sư Tử.,nllb_lora,0.0,[],[],0.1354999840259552,232.97296000009737
+sentence,"Ba za! Pai poa, eoq pa ngot.","Bà zà! Nấu cơm, anh đói.","Ba za! Pai poa, eoq pa ngot.",nllb_lora,0.0,[],[],0.12209999840706587,318.7382119999711
+sentence,beq _bèn renh Aiaq teo haq.,Mình mau theo lối nó,"""Đó là lý do của A-ia-q-tô-ha-q"".",nllb_lora,0.0,[],[],0.1249000197276473,464.2012479998812
+sentence,Bô `nỉ.,Tôi không biết.,"Không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không",nllb_lora,0.0,[],[],0.12049998622387648,2584.2785529998764
+sentence,Caiq toq pling,To bằng trời,Caiq toq pling,nllb_lora,0.0,[],[],0.11480000102892518,173.0382999999165
+sentence,Canaq dỉg jaq. Au ùh rọt.,"Đắt quá, tôi không mua.","Quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật, quả thật!",nllb_lora,0.0,[],[],0.1278999843634665,2025.1636600000893
+sentence,Chucq mung oh i viêcq vroq ta nha nuocq,Chúc mừng em đã có việc làm trong (cơ quan) Nhà nước,Chucq mung oh i vicq vroq tôi không nuocq,nllb_lora,0.0,[],[],0.12729997979477048,384.6366890002173
+sentence,"Con iêng, oh ineq klêq?","Em gái, em tên gì?",Ôi trời ơi!,nllb_lora,0.0,[],[],0.12010004138574004,232.5962680001794
+sentence,"Dỉq ca plài bùi caq jam capò,bo,chùa.","Cả làng vui ăn trâu,ăn bò,ăn heo.","Nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này, nghe này.",nllb_lora,0.0,[],[],0.13939995551481843,2233.615256999656
+sentence,Gê oi đheacq lêq,Anh ở nước nào,Đúng như vậy.,nllb_lora,0.0,[],[],0.11999998241662979,159.1049080002449
+sentence,Gè toq lêq hanăm?,Em bao nhiêu tuổi(năm)?,Làm thế nào?,nllb_lora,0.0,[],[],0.12099999003112316,156.32661100016776
+sentence,Gê vroq ruông toq lêq hi?,Anh làm ruộng bao nhiêu ngày?,Đúng thế nào?,nllb_lora,0.0,[],[],0.12179999612271786,173.6648239998431
+sentence,Ghêêh lam kleq ra mang kô?,Bạn đi đâu ban đêm đây?,Chết tiệt có thể mang theo một cái gì đó không?,nllb_lora,0.0,[],[],0.12009998317807913,330.0092589997803
+sentence,Ghêêh vroq tô trương tô an ninh jiaq?,Bạn làm tổ làm tổ trưởng tổ an ninh à?,Hành động an ninh thế giới?,nllb_lora,0.0,[],[],0.12600002810359,219.38333199977933
+sentence,Gông ao oi ta tinh Quảng Ngaih.,Quê tôi ở tỉnh Quảng Ngãi.,Ngôi nhà của chúng tôi là Quảng Ngaih.,nllb_lora,0.0,[],[],0.12659997446462512,291.3176580000254
+sentence,Hì hnèh au trùh.,Tôi đến hôm qua.,"Nghe này, nghe này.",nllb_lora,0.0,[],[],0.11869997251778841,212.1092439997483
+sentence,Hnem oi plây klêq?,Nhà ở làng/bản/nóc nào?,Ngươi là thằng nhóc à?,nllb_lora,0.0,[],[],0.11860002996399999,232.19342399988815
+sentence,Hnem oi talêq?,Nhà ở đâu,Nghe tiếng Anh?,nllb_lora,0.0,[],[],0.11850002920255065,154.54667799986055
+sentence,Hnim au jêq cô.,Nhà tôi ở gần đây.,Hnim au jêq cô.,nllb_lora,0.0,[],[],0.1173000200651586,210.27296099964587
+sentence,Hnoq hãi.,Có chứ.,Hnoq sợ hãi.,nllb_lora,0.0,[],[],0.11500000255182385,193.09326599977797
+sentence,Ìh brog vìac hìaq loq lếp ủh?,Anh làm việc có mệt không?,Anh có muốn ăn không?,nllb_lora,0.0,[],[],0.12579996837303042,248.3985329999996
+sentence,Ih oi aiq uh?,Ông có khoé không?,"Ồ, sao không?",nllb_lora,0.0,[],[],0.11600001016631722,193.358852000074
+sentence,Ìh oi ĩnh plài vì Anang jah ha`meang hnoq Batò ùh?,Từ vì Anang anh có đến Batơ không?,Có phải anh đang khóc vì anh không biết sao?,nllb_lora,0.0,[],[],0.1317000132985413,309.1709739996986
+sentence,Ih oi thôn klêq/ xah klêq/ hwên klêq/ tỉnh klêq,Anh/ chị/ ông/ bà ở thôn/ xã/huyện/ tỉnh nào?,Thị trấn Kêq/ xah Kêq/ hwên Kêq/ tỉnh Kêq,nllb_lora,0.0,[],[],0.1311999512836337,531.0436899999331
+sentence,Joi tacro.clàn 1on hlôi apôm.,"Con nai ngã,nó nuốt nguyên con.",Coi tacro. Đặt một chiếc ghế.,nllb_lora,0.0,[],[],0.12360000982880592,346.5841920001367
+sentence,Khê jâtq la mua klêq?,Tháng 10 là mùa gì?,Anh có muốn mua nhựa không?,nllb_lora,0.0,[],[],0.13499998021870852,275.8779420000792
+sentence,Khôi haten sèq.,Gần tới rồi.,Một chút thù hận.,nllb_lora,0.0,[],[],0.11860002996399999,176.1270679999143
+sentence,Lam ta hwên Ba Tơ,Đi đến huyện Ba Tơ,"Lần này, tôi có 3 người.",nllb_lora,0.0,[],[],0.11929997708648443,272.61377800004993
+sentence,Lam troang wecq,Đi đường quẹo,Lâm Trương Cửu,nllb_lora,0.0,[],[],0.11580000864341855,195.9934559999965
+sentence,Ma lam mùih jèch.,Hai chúng tôi đi làm rẫy.,Mùi mùi.,nllb_lora,0.0,[],[],0.11680001625791192,194.59003499969185
+sentence,Mơi lam ngan văn nghêq,Mời đi xem văn nghệ,"Thậm chí, tôi cũng rất vui vẻ.",nllb_lora,0.0,[],[],0.11889997404068708,254.52381900004184
+sentence,Mơi voac lam hâu tadreo vitq capơ,Mời ông đi dự cúng đâm trâu,Bơi râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu râu r,nllb_lora,0.0,[],[],0.1259999698959291,2570.318734000012
+sentence,"Mòiq pớm calô, baiq toq cadrỉ.",Một con trai và hai con gái.,"Thằng quỷ quỷ, quỷ quỷ quỷ.",nllb_lora,0.0,[],[],0.12450001668184996,350.8058159995926
+sentence,nhìn ĩnh veang broq da chôp.,Chúng tôi cũng muốn giúp hai ông.,Nhìn vào những chiếc áo khoác.,nllb_lora,0.0,[],[],0.12240000069141388,274.2274610000095
+sentence,"Òq, ùh caq cleq oq.",Đi mạnh giỏi nhé.,"Được rồi, được rồi.",nllb_lora,0.0,[],[],0.11989998165518045,239.2152350003016
+sentence,Phapq luât aih kah klêq?,Pháp luật là cái gì?,Phapq là ai?,nllb_lora,0.0,[],[],0.11830002767965198,195.09410900036528
+sentence,"Po ('big dau)yôh, ca'nhah ngit.","Bí đao dài,vỏ màu xanh.","Po ('Big du'yôh, ca'nhah con chó.",nllb_lora,0.0,[],[],0.12099999003112316,372.8612499999144
+sentence,Ta tau au hnoq joi caiq.,tôi thấy con nai lớn đằng kia.,Tôi biết nó.,nllb_lora,0.0,[],[],0.11869997251778841,214.07820100012032
+sentence,Toq xítq,Nhỏ xí xi,Tốt hơn.,nllb_lora,0.0,[],[],0.11419999646022916,135.15194100000372
+sentence,"Ùh,au cadàu yêu renh ca gèh.","Không có,tao chạy mau hơn mày.","Vâng, tôi rất thích bạch tạng.",nllb_lora,0.0,[],[],0.1210999907925725,273.14236099982736
+sentence,Việc khởi nghĩa Ba Tơ zo ka vô lanh đaoq.,Việc khởi nghĩa Ba Tơ do ai lạnh đạo,Sự khởi động của Ba Tơ-ra-cơ là vô cùng khó khăn.,nllb_lora,0.0,[],[],0.12909999350085855,415.33257399987633
+sentence,Voac caq jam chua hadhai jah,Ông ăn thịt heo có được không.,Voac caq jam chua hadhai yeah,nllb_lora,0.0,[],[],0.11829996947199106,214.57235899970328
+sentence,Voac Hồ thanh lâp Đảng hi vaiq khê piq h`năm 1930 oi ta Hồng Kông.,Bác Hồ thành lập Đảng ngày 2 tháng 3 năm 1930 ở Hồng Kông.,Hồng Kông là một thành phố của Hồng Kông.,nllb_lora,0.0,[],[],0.14780001947656274,352.470658999664
+sentence,Vroq 'mâng lêq,làm thế nào,Vroq 'nghĩa lêq,nllb_lora,0.0,[],[],0.11720001930370927,215.56068600011716
+sentence,Vroq taneh loh vâcq hơi đheac,Làm đất bốc nhiều hơi nước,Vroq taneh loh một chút mệt mỏi,nllb_lora,0.0,[],[],0.12260000221431255,292.4126950001664
+sentence,xa ao khôi y.,Xã tôi có rồi.,"- Không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không, không,",nllb_lora,0.0,[],[],0.11939997784793377,2576.049159999912
+sentence,"zoq, ao khanh kô","đúng, em khanh nè.","zoq, bồn ào",nllb_lora,0.0,[],[],0.11710001854225993,215.0581509999938

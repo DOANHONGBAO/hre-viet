@@ -1,0 +1,15 @@
+{
+  "test_rows": 160,
+  "scores": {
+    "bleu": 0.435135,
+    "chrf_pp": 5.879872
+  },
+  "latency_ms_mean": 273.075916,
+  "latency_ms_p95": 537.448112,
+  "training_epochs": 10.0,
+  "best_step": 40,
+  "best_validation_chrf_pp": 4.800153,
+  "final_adapter_sha256": "7e3cb1a4c1d59cd8a4e71a55522d30bbff7d323c4e837f6902143926ecfb977f",
+  "best_adapter_sha256": "7e3cb1a4c1d59cd8a4e71a55522d30bbff7d323c4e837f6902143926ecfb977f",
+  "source_archive_sha256": "b7b861074ebf40ab63e6dff998e63efeb1835076219515ab1ddd32ac00664b53"
+}

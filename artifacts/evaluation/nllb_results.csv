@@ -1,0 +1,2 @@
+﻿model,evaluated_at_utc,train_examples,test_examples,examples,bleu,chrf_pp,latency_ms_mean,latency_ms_p95,oov_rate
+nllb_lora,2026-10-01T05:46:13.511929+00:00,1275,160,160,0.435135,5.879872,273.075916,537.448112,
