@@ -1,4 +1,3 @@
-export type ModelOption = { id: string; label: string; available: boolean }
 export type Term = { source?: string; target?: string; match_type?: string }
 export type Example = { source?: string; target?: string; similarity?: number }
 export type Translation = {
@@ -26,7 +25,7 @@ async function request<T>(path: string, init?: RequestInit, timeoutMs = 120000):
     return response.json() as Promise<T>
   } catch (error) {
     if (error instanceof DOMException && error.name === 'AbortError') {
-      throw new Error('Request timed out. The selected model may need more time to load.')
+      throw new Error('Request timed out. Please try again.')
     }
     throw error
   } finally {
@@ -35,11 +34,10 @@ async function request<T>(path: string, init?: RequestInit, timeoutMs = 120000):
 }
 
 export const api = {
-  models: () => request<ModelOption[]>('/models', undefined, 15000),
-  translate: (text: string, model: string) => request<Translation>('/translate', {
+  translate: (text: string) => request<Translation>('/translate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text, source: 'hre', target: 'vi', model }),
+    body: JSON.stringify({ text, source: 'hre', target: 'vi', model: 'default' }),
   }),
   feedback: (payload: { source: string; prediction: string; correction: string; model: string; rating?: number }) =>
     request<{ id: number; timestamp: string }>('/feedback', {

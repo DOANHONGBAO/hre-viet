@@ -1,21 +1,30 @@
 import { useState } from 'react'
-import { Check, ThumbsDown, ThumbsUp } from 'lucide-react'
+import { Check, Pencil, ThumbsUp } from 'lucide-react'
 import { api, type Translation } from './api'
 
 export default function FeedbackPanel({ source, result }: { source: string; result: Translation }) {
+  const [editing, setEditing] = useState(false)
   const [correction, setCorrection] = useState(result.translation)
-  const [rating, setRating] = useState<number | undefined>()
+  const [helpful, setHelpful] = useState(false)
   const [sending, setSending] = useState(false)
   const [message, setMessage] = useState('')
 
-  async function submit(nextRating = rating) {
-    if (!correction.trim() || sending) return
+  async function submitFeedback(updatedText: string, rating?: number) {
+    const cleaned = updatedText.trim()
+    if (!cleaned || sending) return
     setSending(true)
     setMessage('')
     try {
-      await api.feedback({ source, prediction: result.translation, correction: correction.trim(), model: result.model, rating: nextRating })
-      setRating(nextRating)
-      setMessage('Thanks — your feedback was saved locally.')
+      await api.feedback({
+        source,
+        prediction: result.translation,
+        correction: cleaned,
+        model: result.model,
+        rating,
+      })
+      if (rating === 5) setHelpful(true)
+      if (editing) setEditing(false)
+      setMessage('Thank you — your feedback was saved.')
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Could not save feedback.')
     } finally {
@@ -23,11 +32,51 @@ export default function FeedbackPanel({ source, result }: { source: string; resu
     }
   }
 
-  return <section className="feedback-card">
-    <div><p className="eyebrow">HELP US IMPROVE</p><h3>Was this translation useful?</h3><p className="feedback-subtitle">Rate the result or suggest a better Vietnamese translation.</p></div>
-    <div className="feedback-actions"><button type="button" className={`rating-button ${rating === 5 ? 'selected' : ''}`} onClick={() => void submit(5)} disabled={sending}><ThumbsUp size={17} /> Helpful</button><button type="button" className={`rating-button ${rating === 1 ? 'selected' : ''}`} onClick={() => void submit(1)} disabled={sending}><ThumbsDown size={17} /> Needs work</button></div>
-    <label className="correction-label" htmlFor="correction">SUGGEST A CORRECTION</label>
-    <div className="correction-row"><textarea id="correction" value={correction} onChange={event => setCorrection(event.target.value)} maxLength={4000} /><button type="button" onClick={() => void submit()} disabled={sending || !correction.trim() || correction.trim() === result.translation}><Check size={17} /> Submit correction</button></div>
-    {message && <p className="feedback-message" role="status">{message}</p>}
-  </section>
+  return (
+    <section className="feedback-card">
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3>Was this translation helpful?</h3>
+          <p>Help improve this H’rê → Vietnamese translator.</p>
+        </div>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            className={'rating-button' + (helpful ? ' selected' : '')}
+            onClick={() => void submitFeedback(result.translation, 5)}
+            disabled={sending || helpful}
+          >
+            <ThumbsUp size={16} /> Good
+          </button>
+          <button
+            type="button"
+            className="rating-button"
+            onClick={() => setEditing(value => !value)}
+            disabled={sending}
+          >
+            <Pencil size={16} /> Edit translation
+          </button>
+        </div>
+      </div>
+      {editing && (
+        <div className="correction-form">
+          <label htmlFor="correction">Suggest a better Vietnamese translation</label>
+          <textarea
+            id="correction"
+            value={correction}
+            onChange={event => setCorrection(event.target.value)}
+            maxLength={4000}
+          />
+          <button
+            type="button"
+            onClick={() => void submitFeedback(correction)}
+            disabled={sending || !correction.trim() || correction.trim() === result.translation}
+          >
+            <Check size={16} /> Send correction
+          </button>
+        </div>
+      )}
+      {message && <p className="feedback-message" role="status">{message}</p>}
+    </section>
+  )
 }
