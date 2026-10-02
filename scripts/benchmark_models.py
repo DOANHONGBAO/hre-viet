@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import sys
 from pathlib import Path
 
@@ -36,6 +37,8 @@ def _checked_replay(path: Path, test: pd.DataFrame) -> pd.DataFrame:
 
 def benchmark(root: Path, config: dict) -> pd.DataFrame:
     train = pd.read_parquet(resolve(root, config["data"]["train"]))
+    train_hash = hashlib.sha256(resolve(root, config["data"]["train"]).read_bytes()).hexdigest()
+    test_hash = hashlib.sha256(resolve(root, config["data"]["test"]).read_bytes()).hexdigest()
     test = pd.read_parquet(resolve(root, config["data"]["test"])).reset_index(drop=True)
     if test.empty or not {"hre", "vi", "dataset_type"} <= set(test):
         raise ValueError("Fixed test split is missing or invalid")
@@ -73,6 +76,7 @@ def benchmark(root: Path, config: dict) -> pd.DataFrame:
         results.append(
             {
                 "model": name,
+                "direction": "hre_to_vi",
                 "category": category,
                 "BLEU": metrics["bleu"],
                 "chrF++": metrics["chrf_pp"],
@@ -109,6 +113,7 @@ def benchmark(root: Path, config: dict) -> pd.DataFrame:
         results.append(
             {
                 "model": name,
+                "direction": "hre_to_vi",
                 "category": category,
                 "BLEU": metrics["bleu"],
                 "chrF++": metrics["chrf_pp"],
@@ -120,7 +125,22 @@ def benchmark(root: Path, config: dict) -> pd.DataFrame:
                 "oov_rate": "",
             }
         )
-    comparison = pd.DataFrame(results).sort_values("chrF++", ascending=False)
+    reverse_path = resolve(root, config["data"]["reverse_results"])
+    if reverse_path.is_file():
+        reverse = pd.read_csv(reverse_path).iloc[0]
+        if (reverse["train_sha256"] != train_hash
+                or reverse["test_sha256"] != test_hash
+                or int(reverse["test_examples"]) != len(test)):
+            raise ValueError("Reverse benchmark is stale; rerun train_statistical_bidirectional.py")
+        results.append({
+            "model": "statistical", "direction": "vi_to_hre", "category": "statistical",
+            "BLEU": reverse["bleu"], "chrF++": reverse["chrf_pp"],
+            "avg_latency_ms": reverse["latency_ms_mean"],
+            "median_latency_ms": reverse["latency_ms_median"],
+            "parameters": "", "notes": "Live local reverse test inference; train-only fit",
+            "test_examples": len(test), "oov_rate": reverse["oov_rate"],
+        })
+    comparison = pd.DataFrame(results).sort_values(["direction", "chrF++"], ascending=[True, False])
     comparison_path = resolve(root, config["evaluation"]["comparison"])
     comparison_path.parent.mkdir(parents=True, exist_ok=True)
     comparison.to_csv(comparison_path, index=False, encoding="utf-8-sig")

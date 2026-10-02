@@ -1,11 +1,12 @@
-﻿model,category,BLEU,chrF++,avg_latency_ms,median_latency_ms,parameters,notes,test_examples,oov_rate
-statistical,statistical,6.277037,23.059844,0.532237,0.23255,,Live local test inference; train-only fit,160,0.18595
-ibm1,statistical,4.249287,20.718799,0.271651,0.1407,,Live local test inference; train-only fit,160,0.18595
-translation_memory,retrieval,4.55251,17.809439,35.035881,34.64255,,Live local test inference; train-only fit,160,
-rule_based,rule_based,2.330843,11.724265,0.047034,0.03235,,Live local test inference; train-only fit,160,0.770661
-dictionary,rule_based,2.330843,11.724265,0.031277,0.02455,,Live local test inference; train-only fit,160,0.770661
-nllb_tm,hybrid,1.739116,9.176759,,,,Validated offline neural replay; end-to-end latency unavailable,160,
-full_hybrid,hybrid,1.739116,9.176226,,,,Validated offline neural replay; end-to-end latency unavailable,160,
-nllb_dictionary,hybrid,0.467314,6.888663,,,,Validated offline neural replay; end-to-end latency unavailable,160,
-nllb_lora,pretrained,0.435135,5.879872,273.075916,158.468711,,Historical Kaggle T4 inference; not same-hardware latency,160,
-nllb_only,pretrained,0.435135,5.879872,,,,Validated offline neural replay; end-to-end latency unavailable,160,
+﻿model,direction,category,BLEU,chrF++,avg_latency_ms,median_latency_ms,parameters,notes,test_examples,oov_rate
+statistical,hre_to_vi,statistical,6.277037,23.059844,0.477048,0.2197,,Live local test inference; train-only fit,160,0.18595
+ibm1,hre_to_vi,statistical,4.249287,20.718799,0.223815,0.1025,,Live local test inference; train-only fit,160,0.18595
+translation_memory,hre_to_vi,retrieval,4.55251,17.809439,31.990362,30.7574,,Live local test inference; train-only fit,160,
+rule_based,hre_to_vi,rule_based,2.330843,11.724265,0.038854,0.0301,,Live local test inference; train-only fit,160,0.770661
+dictionary,hre_to_vi,rule_based,2.330843,11.724265,0.029971,0.0234,,Live local test inference; train-only fit,160,0.770661
+nllb_tm,hre_to_vi,hybrid,1.739116,9.176759,,,,Validated offline neural replay; end-to-end latency unavailable,160,
+full_hybrid,hre_to_vi,hybrid,1.739116,9.176226,,,,Validated offline neural replay; end-to-end latency unavailable,160,
+nllb_dictionary,hre_to_vi,hybrid,0.467314,6.888663,,,,Validated offline neural replay; end-to-end latency unavailable,160,
+nllb_lora,hre_to_vi,pretrained,0.435135,5.879872,273.075916,158.468711,,Historical Kaggle T4 inference; not same-hardware latency,160,
+nllb_only,hre_to_vi,pretrained,0.435135,5.879872,,,,Validated offline neural replay; end-to-end latency unavailable,160,
+statistical,vi_to_hre,statistical,3.178896,25.836528,0.828972,0.7208,,Live local reverse test inference; train-only fit,160,0.118044

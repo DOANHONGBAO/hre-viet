@@ -23,7 +23,14 @@ class TranslationModel(Protocol):
 def evaluate_model(
     model: TranslationModel,
     test_frame: pd.DataFrame,
+    *,
+    source_lang: str = "hre",
+    target_lang: str = "vi",
 ) -> tuple[dict[str, Any], pd.DataFrame]:
+    if (source_lang, target_lang) not in {("hre", "vi"), ("vi", "hre")}:
+        raise ValueError("Evaluation requires hre↔vi direction")
+    if test_frame.empty:
+        raise ValueError("Cannot evaluate an empty test set")
     hypotheses: list[str] = []
     references: list[str] = []
     latencies_ms: list[float] = []
@@ -32,22 +39,24 @@ def evaluate_model(
     oov_applicable = False
     prediction_rows = []
 
-    for row in test_frame[["hre", "vi", "dataset_type"]].itertuples(index=False):
+    columns = test_frame[[source_lang, target_lang, "dataset_type"]]
+    for row in columns.itertuples(index=False, name=None):
+        source_text, reference_text, dataset_type = row
         start = time.perf_counter()
-        result = model.translate(str(row.hre))
+        result = model.translate(str(source_text))
         latencies_ms.append((time.perf_counter() - start) * 1000.0)
         hypothesis = str(result.get("translation", ""))
-        reference = str(row.vi)
+        reference = str(reference_text)
         hypotheses.append(hypothesis)
         references.append(reference)
         if "unknown_terms" in result:
             oov_applicable = True
             unknown_count += len(result.get("unknown_terms", []))
-        source_token_count += len(str(row.hre).split())
+        source_token_count += len(str(source_text).split())
         prediction_rows.append(
             {
-                "dataset_type": row.dataset_type,
-                "source": row.hre,
+                "dataset_type": dataset_type,
+                "source": source_text,
                 "reference": reference,
                 "hypothesis": hypothesis,
                 "latency_ms": latencies_ms[-1],

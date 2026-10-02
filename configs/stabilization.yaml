@@ -3,7 +3,8 @@ data:
   test: data/splits/test.parquet
   nllb_predictions: artifacts/evaluation/predictions/nllb_lora.csv
   hybrid_predictions_dir: artifacts/evaluation/stage4_predictions
-  statistical_artifact: artifacts/models/statistical
+  statistical_artifact: artifacts/models/statistical/hre_to_vi
+  reverse_results: artifacts/evaluation/vi_to_hre_results.csv
 evaluation:
   comparison: artifacts/evaluation/model_comparison.csv
   outputs: artifacts/evaluation/model_outputs.csv

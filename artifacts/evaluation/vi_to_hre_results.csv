@@ -1,0 +1,2 @@
+﻿model,direction,train_examples,test_examples,train_sha256,test_sha256,examples,bleu,chrf_pp,latency_ms_mean,latency_ms_median,latency_ms_p95,oov_rate
+statistical,vi_to_hre,1275,160,46bec250213d55c09a9e83b7578427b5c0aa19efd20a8dc7351c77b425187774,96e3fa667849440424c205cddc5fcb184d765a1f9cd5bbaf4072a8c9f321edce,160,3.178896,25.836528,0.828972,0.7208,2.198735,0.118044
