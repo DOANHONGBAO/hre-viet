@@ -1,5 +1,13 @@
 # Technical decisions
 
+## Stage 6: bidirectional statistical translation
+
+- Train two independent IBM Model 1 conditional distributions, not a dictionary inversion. The reverse target LM learns H’rê bigrams only from the fixed train split; forward target LM learns Vietnamese bigrams. Both use add-0.5 smoothing and the predeclared 0.15 LM weight in `configs/statistical.yaml`; no test-based tuning was done.
+- Keep the original `artifacts/models/statistical/` files intact and save new directional artifacts beneath `hre_to_vi/` and `vi_to_hre/`, each with train-file SHA-256 provenance. Legacy v1 artifacts remain loadable as forward models.
+- The API defaults to statistical MT in each direction through `configs/serving.yaml`. Reverse dictionary, TM, hybrid, and NLLB are not trained, so explicit reverse requests for those models return 422 instead of silently using forward models. Missing reverse artifacts return 503.
+- Reverse evaluation uses all 160 fixed test pairs and saves full predictions plus a deterministic seed-42 subset. Its BLEU/chrF++ must not be ranked against forward scores as though the two translation tasks had equal difficulty. Local latency is descriptive, not a controlled hardware comparison.
+- Root `npm run dev` starts the localhost API and React UI together; CORS remains restricted to local Vite origins. No Docker, Kubernetes, cloud deployment, or production monitoring is introduced.
+
 ## Stabilization: model selection and serving
 
 - The public demo UI intentionally omits model selection and always sends `model: default` for a simple fixed H’rê → Vietnamese workflow. `GET /models` and explicit API model routes remain available for researchers and tests. Feedback correction controls appear only when requested.

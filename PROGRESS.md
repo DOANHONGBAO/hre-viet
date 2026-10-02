@@ -1,5 +1,12 @@
 # Project progress
 
+## Stage 6 bidirectional local demo (2026-10-02)
+
+- Trained independent IBM1 lexical distributions and target-side smoothed bigram LMs from the unchanged 1,275-row train split for both H’rê → Vietnamese and Vietnamese → H’rê; saved separate directional artifacts without overwriting the earlier root artifact.
+- Evaluated the reverse model on all 160 fixed test rows: BLEU 3.178896, chrF++ 25.836528, mean/median latency 0.828972/0.720800 ms, OOV ratio 0.118044. Saved all predictions and a seed-42, non-cherry-picked 24-row sample.
+- Added direction to the master comparison table; forward and reverse scores are separated. API selects statistical MT per direction and rejects unsupported reverse model choices. React swaps languages without reload or a model selector.
+- Added root local-development scripts and configurable frontend API URL. Python tests: 39 passed; React build and lint passed. No deployment work.
+
 ## Stabilization (2026-10-01)
 
 - Polished the React demo into one focused H’rê → Vietnamese translator screen: no model selector, no extra tabs, and a compact optional correction flow. The frontend sends `model: default`; model selection remains available through the API only.
