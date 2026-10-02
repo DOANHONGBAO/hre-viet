@@ -37,7 +37,7 @@ export default function FeedbackPanel({ source, result }: { source: string; resu
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h3>Was this translation helpful?</h3>
-          <p>Help improve this H’rê → Vietnamese translator.</p>
+          <p>Help improve this {result.source === 'hre' ? 'H’rê → Vietnamese' : 'Vietnamese → H’rê'} translator.</p>
         </div>
         <div className="flex gap-2">
           <button
@@ -60,7 +60,7 @@ export default function FeedbackPanel({ source, result }: { source: string; resu
       </div>
       {editing && (
         <div className="correction-form">
-          <label htmlFor="correction">Suggest a better Vietnamese translation</label>
+          <label htmlFor="correction">Suggest a better {result.target === 'hre' ? 'H’rê' : 'Vietnamese'} translation</label>
           <textarea
             id="correction"
             value={correction}

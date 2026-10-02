@@ -1,25 +1,27 @@
 import { ArrowRight, Check, Copy, Sparkles } from 'lucide-react'
 import type { Translation } from './api'
 
-export function TranslationPanel({ text, onTextChange, onTranslate, loading }: {
+export function TranslationPanel({ text, onTextChange, onTranslate, loading, language }: {
   text: string
   onTextChange: (value: string) => void
   onTranslate: () => void
   loading: boolean
+  language: 'hre' | 'vi'
 }) {
+  const label = language === 'hre' ? 'H’rê' : 'Vietnamese'
   return (
     <section className="editor-card">
       <div className="editor-heading">
         <div className="flex items-center gap-3">
-          <span className="language-mark">Hr</span>
-          <div><p className="eyebrow">SOURCE</p><h3>H’rê</h3></div>
+          <span className="language-mark">{language === 'hre' ? 'Hr' : 'Vi'}</span>
+          <div><p className="eyebrow">SOURCE</p><h3>{label}</h3></div>
         </div>
         <span className="mini-tag">INPUT</span>
       </div>
       <textarea
-        aria-label="H’rê input"
+        aria-label={`${label} input`}
         className="editor-input"
-        placeholder="Type or paste your H’rê text here…"
+        placeholder={`Type or paste your ${label} text here…`}
         value={text}
         onChange={event => onTextChange(event.target.value)}
         onKeyDown={event => {
@@ -42,18 +44,20 @@ export function TranslationPanel({ text, onTextChange, onTranslate, loading }: {
   )
 }
 
-export function TranslationResult({ result, loading, copied, onCopy }: {
+export function TranslationResult({ result, loading, copied, onCopy, language }: {
   result: Translation | null
   loading: boolean
   copied: boolean
   onCopy: () => void
+  language: 'hre' | 'vi'
 }) {
+  const label = language === 'hre' ? 'H’rê' : 'Vietnamese'
   return (
     <section className="editor-card result-card">
       <div className="editor-heading">
         <div className="flex items-center gap-3">
-          <span className="language-mark output-mark">Vi</span>
-          <div><p className="eyebrow">TARGET</p><h3>Vietnamese</h3></div>
+          <span className="language-mark output-mark">{language === 'hre' ? 'Hr' : 'Vi'}</span>
+          <div><p className="eyebrow">TARGET</p><h3>{label}</h3></div>
         </div>
         <span className="mini-tag output-tag">OUTPUT</span>
       </div>
@@ -65,7 +69,7 @@ export function TranslationResult({ result, loading, copied, onCopy }: {
         ) : (
           <div className="empty-illustration">
             <Sparkles size={26} strokeWidth={1.5} />
-            <p>Your Vietnamese translation will appear here.</p>
+            <p>Your {label} translation will appear here.</p>
           </div>
         )}
       </div>

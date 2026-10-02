@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { CircleAlert, Languages } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { ArrowLeftRight, CircleAlert, Languages } from 'lucide-react'
 import { api, type Translation } from './api'
 import { TranslationPanel, TranslationResult } from './components'
 import FeedbackPanel from './FeedbackPanel'
@@ -11,6 +11,22 @@ export default function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [copied, setCopied] = useState(false)
+  const [sourceLang, setSourceLang] = useState<'hre' | 'vi'>('hre')
+  const requestId = useRef(0)
+  const targetLang = sourceLang === 'hre' ? 'vi' : 'hre'
+  const sourceLabel = sourceLang === 'hre' ? 'H’rê' : 'Vietnamese'
+  const targetLabel = targetLang === 'hre' ? 'H’rê' : 'Vietnamese'
+
+  function swapDirection() {
+    requestId.current += 1
+    setSourceLang(targetLang)
+    setText(result?.translation ?? '')
+    setResult(null)
+    setSubmittedText('')
+    setError('')
+    setCopied(false)
+    setLoading(false)
+  }
 
   async function translate() {
     const source = text.trim()
@@ -19,14 +35,17 @@ export default function App() {
     setError('')
     setResult(null)
     setCopied(false)
+    const currentRequest = ++requestId.current
     try {
-      const answer = await api.translate(source)
+      const answer = await api.translate(source, sourceLang, targetLang)
+      if (currentRequest !== requestId.current) return
       setSubmittedText(source)
       setResult(answer)
     } catch (reason) {
+      if (currentRequest !== requestId.current) return
       setError(reason instanceof Error ? reason.message : 'Translation failed. Please try again.')
     } finally {
-      setLoading(false)
+      if (currentRequest === requestId.current) setLoading(false)
     }
   }
 
@@ -48,24 +67,24 @@ export default function App() {
             <span className="brand-symbol"><Languages size={21} strokeWidth={2.2} /></span>
             <span>HRE<span className="brand-accent">·</span>TRANSLATE</span>
           </a>
-          <span className="header-caption">H’rê → Vietnamese</span>
+          <span className="header-caption">H’rê ↔ Vietnamese</span>
         </div>
       </header>
 
       <main className="page-container">
         <section className="intro">
-          <p className="intro-kicker">H’RÊ → VIETNAMESE</p>
+          <p className="intro-kicker">H’RÊ ↔ VIETNAMESE</p>
           <h1>Translation made <span>simple.</span></h1>
-          <p>Enter H’rê text and get a Vietnamese translation in one step.</p>
+          <p>Translate between H’rê and Vietnamese in one step.</p>
         </section>
 
-        <section className="workspace" aria-label="H’rê to Vietnamese translator">
+        <section className="workspace" aria-label={`${sourceLabel} to ${targetLabel} translator`}>
           <div className="workspace-heading">
             <div>
               <p className="eyebrow">TRANSLATOR</p>
-              <h2>H’rê <span aria-hidden="true">→</span> Vietnamese</h2>
+              <h2>{sourceLabel} <span aria-hidden="true">→</span> {targetLabel}</h2>
             </div>
-            <span className="language-pair">Fixed language pair</span>
+            <span className="language-pair">Two-way translation</span>
           </div>
           {error && (
             <div className="error-banner" role="alert">
@@ -73,18 +92,23 @@ export default function App() {
               <span>{error}</span>
             </div>
           )}
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="translation-grid">
             <TranslationPanel
               text={text}
               onTextChange={setText}
               onTranslate={() => void translate()}
               loading={loading}
+              language={sourceLang}
             />
+            <button className="swap-button" type="button" onClick={swapDirection} aria-label="Swap translation direction">
+              <ArrowLeftRight size={18} /> <span>Swap</span>
+            </button>
             <TranslationResult
               result={result}
               loading={loading}
               copied={copied}
               onCopy={() => void copy()}
+              language={targetLang}
             />
           </div>
           {result && (
