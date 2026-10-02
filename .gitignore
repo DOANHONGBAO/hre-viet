@@ -16,3 +16,5 @@ artifacts/feedback/
 apps/web/node_modules/
 apps/web/dist/
 apps/web/*.tsbuildinfo
+node_modules/
+apps/web/.env.local

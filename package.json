@@ -1,0 +1,16 @@
+{
+  "name": "hre-translate-local",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/web"],
+  "scripts": {
+    "dev": "concurrently --kill-others -n api,web \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "conda run -n hre-translate-stage1 --no-capture-output python scripts/run_api.py",
+    "dev:web": "npm --prefix apps/web run dev",
+    "build:web": "npm --prefix apps/web run build",
+    "lint:web": "npm --prefix apps/web run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
