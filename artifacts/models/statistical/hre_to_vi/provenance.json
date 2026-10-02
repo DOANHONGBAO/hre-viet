@@ -1,0 +1,13 @@
+{
+  "train_split": "data/splits/train.parquet",
+  "train_sha256": "46bec250213d55c09a9e83b7578427b5c0aa19efd20a8dc7351c77b425187774",
+  "train_examples": 1275,
+  "source_lang": "hre",
+  "target_lang": "vi",
+  "settings": {
+    "iterations": 10,
+    "lm_weight": 0.15,
+    "beam_size": 4,
+    "candidates_per_token": 3
+  }
+}

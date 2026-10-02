@@ -9,13 +9,13 @@ from typing import Any
 
 import pandas as pd
 
-from hre_translate.data.normalize import normalize_hre
+from hre_translate.data.normalize import normalize_hre, normalize_vietnamese
 from hre_translate.models.statistical.ibm1 import IBMModel1
 from hre_translate.models.text import detokenize, is_word_token, token_key, tokenize
 
 
 class BigramLanguageModel:
-    """Train-only Vietnamese bigrams with add-alpha smoothing."""
+    """Train-only target-language bigrams with add-alpha smoothing."""
 
     def __init__(self, *, alpha: float = 0.5) -> None:
         if alpha <= 0:
@@ -50,7 +50,7 @@ class BigramLanguageModel:
 
 
 class StatisticalTranslator:
-    """IBM1 lexical candidates rescored by a small Vietnamese bigram LM."""
+    """Directional IBM1 candidates rescored by a target-language bigram LM."""
 
     def __init__(
         self,
@@ -60,6 +60,8 @@ class StatisticalTranslator:
         lm_weight: float = 0.15,
         beam_size: int = 4,
         candidates_per_token: int = 3,
+        source_lang: str = "hre",
+        target_lang: str = "vi",
     ) -> None:
         if lm_weight < 0 or beam_size < 1 or candidates_per_token < 1:
             raise ValueError("Invalid statistical decoder settings")
@@ -68,6 +70,10 @@ class StatisticalTranslator:
         self.lm_weight = lm_weight
         self.beam_size = beam_size
         self.candidates_per_token = candidates_per_token
+        if (source_lang, target_lang) not in {("hre", "vi"), ("vi", "hre")}:
+            raise ValueError("Statistical translation requires hre↔vi direction")
+        self.source_lang = source_lang
+        self.target_lang = target_lang
 
     @classmethod
     def from_frame(
@@ -78,20 +84,28 @@ class StatisticalTranslator:
         lm_weight: float = 0.15,
         beam_size: int = 4,
         candidates_per_token: int = 3,
+        source_lang: str = "hre",
+        target_lang: str = "vi",
     ) -> StatisticalTranslator:
-        lexical = IBMModel1.from_frame(frame, iterations=iterations)
-        lm = BigramLanguageModel().fit(frame["vi"].astype(str).tolist())
+        if (source_lang, target_lang) not in {("hre", "vi"), ("vi", "hre")}:
+            raise ValueError("Statistical translation requires hre↔vi direction")
+        pairs = frame[[source_lang, target_lang]].astype(str).itertuples(index=False, name=None)
+        lexical = IBMModel1(iterations=iterations).fit(pairs)
+        lm = BigramLanguageModel().fit(frame[target_lang].astype(str).tolist())
         return cls(
             lexical,
             lm,
             lm_weight=lm_weight,
             beam_size=beam_size,
             candidates_per_token=candidates_per_token,
+            source_lang=source_lang,
+            target_lang=target_lang,
         )
 
     def translate(self, text: str) -> dict[str, Any]:
         started = time.perf_counter()
-        source_tokens = tokenize(normalize_hre(text) or "")
+        normalize = normalize_hre if self.source_lang == "hre" else normalize_vietnamese
+        source_tokens = tokenize(normalize(text) or "")
         beams: list[tuple[float, list[str], str]] = [(0.0, [], "<s>")]
         unknown_terms: list[str] = []
         for source in source_tokens:
@@ -143,7 +157,9 @@ class StatisticalTranslator:
         destination.mkdir(parents=True, exist_ok=True)
         self.lexical.save(destination / "ibm1.json")
         metadata = {
-            "format": "hre-statistical-v1",
+            "format": "hre-statistical-v2",
+            "source_lang": self.source_lang,
+            "target_lang": self.target_lang,
             "alpha": self.language_model.alpha,
             "counts": self.language_model.counts,
             "vocabulary": sorted(self.language_model.vocabulary),
@@ -159,7 +175,7 @@ class StatisticalTranslator:
     def load(cls, directory: str | Path) -> StatisticalTranslator:
         source = Path(directory)
         metadata = json.loads((source / "decoder.json").read_text(encoding="utf-8"))
-        if metadata.get("format") != "hre-statistical-v1":
+        if metadata.get("format") not in {"hre-statistical-v1", "hre-statistical-v2"}:
             raise ValueError("Unsupported statistical model artifact")
         language_model = BigramLanguageModel(alpha=float(metadata["alpha"]))
         language_model.counts = {
@@ -172,4 +188,6 @@ class StatisticalTranslator:
             lm_weight=float(metadata["lm_weight"]),
             beam_size=int(metadata["beam_size"]),
             candidates_per_token=int(metadata["candidates_per_token"]),
+            source_lang=str(metadata.get("source_lang", "hre")),
+            target_lang=str(metadata.get("target_lang", "vi")),
         )

@@ -1,0 +1,23 @@
+data:
+  train: data/splits/train.parquet
+  test: data/splits/test.parquet
+evaluation:
+  reverse_results: artifacts/evaluation/vi_to_hre_results.csv
+  reverse_predictions: artifacts/evaluation/predictions/statistical_vi_to_hre.csv
+  reverse_examples: artifacts/evaluation/vi_to_hre_examples.csv
+  comparison: artifacts/evaluation/model_comparison.csv
+  sample_size: 24
+  sample_seed: 42
+directions:
+  hre_to_vi:
+    artifact: artifacts/models/statistical/hre_to_vi
+    iterations: 10
+    lm_weight: 0.15
+    beam_size: 4
+    candidates_per_token: 3
+  vi_to_hre:
+    artifact: artifacts/models/statistical/vi_to_hre
+    iterations: 10
+    lm_weight: 0.15
+    beam_size: 4
+    candidates_per_token: 3
