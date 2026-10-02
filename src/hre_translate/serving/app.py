@@ -8,7 +8,11 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
-from hre_translate.serving.engine import ModelUnavailableError, ServingEngine
+from hre_translate.serving.engine import (
+    ModelUnavailableError,
+    ServingEngine,
+    UnsupportedDirectionError,
+)
 from hre_translate.serving.feedback import FeedbackStore
 from hre_translate.serving.schemas import (
     BatchRequest,
@@ -67,6 +71,8 @@ def create_app(
             return app.state.engine.translate(request)
         except ModelUnavailableError as exc:
             raise HTTPException(status_code=503, detail=str(exc)) from exc
+        except UnsupportedDirectionError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @app.post("/translate/batch", response_model=BatchResponse)
     def translate_batch(request: BatchRequest) -> BatchResponse:
@@ -85,6 +91,8 @@ def create_app(
             ]
         except ModelUnavailableError as exc:
             raise HTTPException(status_code=503, detail=str(exc)) from exc
+        except UnsupportedDirectionError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
         return BatchResponse(
             translations=results,
             latency_ms_total=(time.perf_counter() - started) * 1000,

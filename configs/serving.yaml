@@ -3,7 +3,13 @@ nllb_config: configs/nllb.yaml
 adapter: artifacts/models/nllb/final_adapter
 base_model: artifacts/models/nllb/base_model
 statistical_artifact: artifacts/models/statistical
+statistical_artifacts:
+  hre_to_vi: artifacts/models/statistical/hre_to_vi
+  vi_to_hre: artifacts/models/statistical/vi_to_hre
 default_model: statistical
+default_models:
+  hre_to_vi: statistical
+  vi_to_hre: statistical
 feedback_db: artifacts/feedback/feedback.sqlite3
 frontend_origins:
   - http://127.0.0.1:5173

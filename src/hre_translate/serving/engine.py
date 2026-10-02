@@ -24,6 +24,10 @@ class ModelUnavailableError(RuntimeError):
     pass
 
 
+class UnsupportedDirectionError(ValueError):
+    pass
+
+
 class LazyNLLBTranslator:
     """Load local adapter/base once; serialize inference to limit CPU/GPU memory use."""
 
@@ -106,7 +110,9 @@ class ServingEngine:
         rule_based: RuleBasedTranslator | None = None,
         ibm1: IBMModel1 | None = None,
         statistical: StatisticalTranslator | None = None,
+        reverse_statistical: StatisticalTranslator | None = None,
         default_model: str = "hybrid",
+        default_models: dict[str, str] | None = None,
     ) -> None:
         self.lexicon = lexicon
         self.memory = memory
@@ -115,7 +121,11 @@ class ServingEngine:
         self.rule_based = rule_based
         self.ibm1 = ibm1
         self.statistical = statistical
+        self.reverse_statistical = reverse_statistical
         self.default_model = default_model
+        self.default_models = default_models or {
+            "hre_to_vi": default_model, "vi_to_hre": "statistical"
+        }
         if default_model not in {
             "dictionary", "rule_based", "ibm1", "statistical", "translation_memory", "hybrid"
         }:
@@ -150,13 +160,31 @@ class ServingEngine:
             ngram_range=tuple(options["ngram_range"]),
             direct_match_threshold=float(options["high_threshold"]),
         ).fit(train.loc[train.dataset_type.isin(hybrid["memory_types"])])
-        statistical_path = resolve(root, serving["statistical_artifact"])
+        artifacts = serving.get("statistical_artifacts", {})
+        statistical_path = resolve(
+            root, artifacts.get("hre_to_vi", serving["statistical_artifact"])
+        )
+        if not (statistical_path / "decoder.json").is_file():
+            statistical_path = resolve(root, serving["statistical_artifact"])
         statistical = (
             StatisticalTranslator.load(statistical_path)
             if (statistical_path / "decoder.json").is_file()
             and (statistical_path / "ibm1.json").is_file()
             else StatisticalTranslator.from_frame(train)
         )
+        reverse_path = resolve(
+            root, artifacts.get("vi_to_hre", "artifacts/models/statistical/vi_to_hre")
+        )
+        reverse_statistical = (
+            StatisticalTranslator.load(reverse_path)
+            if (reverse_path / "decoder.json").is_file()
+            and (reverse_path / "ibm1.json").is_file()
+            else None
+        )
+        if reverse_statistical is not None and (
+            reverse_statistical.source_lang, reverse_statistical.target_lang
+        ) != ("vi", "hre"):
+            raise ValueError("Reverse statistical artifact has wrong direction")
         return cls(
             lexicon,
             memory,
@@ -173,7 +201,9 @@ class ServingEngine:
             ),
             ibm1=statistical.lexical,
             statistical=statistical,
+            reverse_statistical=reverse_statistical,
             default_model=str(serving["default_model"]),
+            default_models=serving.get("default_models"),
         )
 
     def models(self) -> list[dict[str, Any]]:
@@ -198,7 +228,15 @@ class ServingEngine:
 
     def translate(self, request: TranslateRequest) -> TranslateResponse:
         started = time.perf_counter()
-        choice = self.default_model if request.model in {"auto", "default"} else request.model
+        direction = f"{request.source}_to_{request.target}"
+        choice = (
+            self.default_models[direction]
+            if request.model in {"auto", "default"} else request.model
+        )
+        if direction == "vi_to_hre" and choice not in {"statistical", "ibm1"}:
+            raise UnsupportedDirectionError(
+                f"{choice} is only available for H’rê → Vietnamese; use statistical for reverse"
+            )
         if choice == "rule_based":
             if self.rule_based is None:
                 raise ModelUnavailableError("Rule-Based model is unavailable")
@@ -209,7 +247,14 @@ class ServingEngine:
                 "similarity": None,
             }
         elif choice in {"ibm1", "statistical"}:
-            model = self.ibm1 if choice == "ibm1" else self.statistical
+            if direction == "vi_to_hre":
+                model = (
+                    self.reverse_statistical.lexical
+                    if choice == "ibm1" and self.reverse_statistical is not None
+                    else self.reverse_statistical if choice == "statistical" else None
+                )
+            else:
+                model = self.ibm1 if choice == "ibm1" else self.statistical
             if model is None:
                 raise ModelUnavailableError(f"{choice} model is unavailable")
             answer = model.translate(request.text)
@@ -242,6 +287,8 @@ class ServingEngine:
             result = self.hybrid[variant].translate(request.text)
         return TranslateResponse(
             translation=str(result["translation"]),
+            source=request.source,
+            target=request.target,
             model=str(result["model"]),
             latency_ms=(time.perf_counter() - started) * 1000,
             retrieved_terms=result["retrieved_terms"],

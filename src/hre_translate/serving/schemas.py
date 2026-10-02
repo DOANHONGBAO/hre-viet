@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 ModelChoice = Literal[
     "auto", "default", "rule_based", "dictionary", "ibm1", "statistical",
@@ -12,8 +12,8 @@ ModelChoice = Literal[
 
 class TranslateRequest(BaseModel):
     text: str = Field(min_length=1, max_length=2000)
-    source: Literal["hre"] = "hre"
-    target: Literal["vi"] = "vi"
+    source: Literal["hre", "vi"] = "hre"
+    target: Literal["hre", "vi"] = "vi"
     model: ModelChoice = "auto"
 
     @field_validator("text")
@@ -24,9 +24,17 @@ class TranslateRequest(BaseModel):
             raise ValueError("text must not be blank")
         return value
 
+    @model_validator(mode="after")
+    def different_languages(self) -> TranslateRequest:
+        if self.source == self.target:
+            raise ValueError("source and target must differ")
+        return self
+
 
 class TranslateResponse(BaseModel):
     translation: str
+    source: Literal["hre", "vi"]
+    target: Literal["hre", "vi"]
     model: str
     latency_ms: float = Field(ge=0)
     retrieved_terms: list[dict[str, Any]] = Field(default_factory=list)
@@ -36,8 +44,8 @@ class TranslateResponse(BaseModel):
 
 class BatchRequest(BaseModel):
     texts: list[str] = Field(min_length=1, max_length=16)
-    source: Literal["hre"] = "hre"
-    target: Literal["vi"] = "vi"
+    source: Literal["hre", "vi"] = "hre"
+    target: Literal["hre", "vi"] = "vi"
     model: ModelChoice = "auto"
 
     @field_validator("texts")
@@ -47,6 +55,12 @@ class BatchRequest(BaseModel):
         if any(not value or len(value) > 2000 for value in cleaned):
             raise ValueError("each text must contain 1–2000 nonblank characters")
         return cleaned
+
+    @model_validator(mode="after")
+    def different_languages(self) -> BatchRequest:
+        if self.source == self.target:
+            raise ValueError("source and target must differ")
+        return self
 
 
 class BatchResponse(BaseModel):
